@@ -2,13 +2,14 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login/Login.vue'
+import NotFoud from '../views/NotFound/NotFound.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '*',
-    redirect: '/login'
+    component: NotFoud
   },
   {
     path: '/',
