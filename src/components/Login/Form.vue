@@ -38,6 +38,15 @@
                 ></v-text-field>
             </v-row>
         </v-card-text>
+
+        <v-row  class="justify-center">
+            <v-btn
+            color="primary"
+            text
+            >
+                Login
+            </v-btn>
+        </v-row>
     </v-card>
 </template>
 
