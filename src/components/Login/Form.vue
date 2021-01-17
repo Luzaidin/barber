@@ -33,7 +33,7 @@
                 <v-text-field
                 v-model="form.password.value"
                 :type="'password'"
-                label="Senha"
+                label="Password"
                 required
                 ></v-text-field>
             </v-row>
@@ -45,6 +45,15 @@
             text
             >
                 Login
+            </v-btn>
+        </v-row>
+
+         <v-row  class="justify-center">
+            <v-btn
+            color="primary"
+            text
+            >
+            Forgot password?
             </v-btn>
         </v-row>
     </v-card>
