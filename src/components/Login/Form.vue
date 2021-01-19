@@ -48,14 +48,24 @@
             </v-btn>
         </v-row>
 
-         <v-row  class="justify-center">
+        <v-row  class="mt-4 justify-center">
             <v-btn
             color="primary"
             text
             >
-            Forgot password?
+                Forgot password?
             </v-btn>
         </v-row>
+
+        <v-row  class="mt-16 justify-center">
+            <v-btn
+            color="primary"
+            text
+            >
+                Sign Up
+            </v-btn>
+        </v-row>
+
     </v-card>
 </template>
 
