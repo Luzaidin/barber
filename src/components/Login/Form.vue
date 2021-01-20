@@ -11,7 +11,7 @@
             ></v-progress-linear>
         </template>
 
-        <v-card-title class="justify-center">Login</v-card-title>
+        <v-card-title class="justify-center">Login Teste</v-card-title>
 
         <v-card-text>
             <v-row
