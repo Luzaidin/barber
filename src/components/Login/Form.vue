@@ -43,6 +43,7 @@
             <v-btn
             color="primary"
             text
+            @click="login"
             >
                 Login
             </v-btn>
@@ -88,7 +89,12 @@
                     }
                 }
             }
-        }
+        },
+        methods: {
+            login() {
+                this.$router.push({ name: "Home" });
+            }
+        },
     }
 </script>
 
