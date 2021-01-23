@@ -14,7 +14,10 @@
         <v-card-title class="justify-center">Login Teste</v-card-title>
 
         <v-card-text>
-            <v-form>
+            <v-form               
+                ref="form"
+                v-model="validForm"
+            >
                 <v-row
                     align="center"
                     class="mx-10"
@@ -98,12 +101,18 @@
                     }
                 },
                 snackbar: false,
-                timeout: 2000
+                timeout: 2000,
+                validForm: true
             }
         },
         methods: {
             login() {
-                this.$router.push({ name: "Home" });
+                let inputsIsValid = this.$refs.form.validate()
+                if (inputsIsValid) {
+                    this.$router.push({ name: "Home" });
+                } else {
+                    this.snackbar = true
+                }
             }
         },
     }
