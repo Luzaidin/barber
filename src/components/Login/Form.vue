@@ -14,29 +14,31 @@
         <v-card-title class="justify-center">Login Teste</v-card-title>
 
         <v-card-text>
-            <v-row
-                align="center"
-                class="mx-10"
-            >
-                <v-text-field
-                v-model="form.email.value"
-                :rules="form.email.rule"
-                label="E-mail"
-                required
-                ></v-text-field>
-            </v-row>
+            <v-form>
+                <v-row
+                    align="center"
+                    class="mx-10"
+                >
+                    <v-text-field
+                    v-model="form.email.value"
+                    :rules="form.email.rule"
+                    label="E-mail"
+                    required
+                    ></v-text-field>
+                </v-row>
 
-            <v-row
-                align="center"
-                class="mx-10 my-10"
-            >
-                <v-text-field
-                v-model="form.password.value"
-                :type="'password'"
-                label="Password"
-                required
-                ></v-text-field>
-            </v-row>
+                <v-row
+                    align="center"
+                    class="mx-10 my-10"
+                >
+                    <v-text-field
+                    v-model="form.password.value"
+                    :type="'password'"
+                    label="Password"
+                    required
+                    ></v-text-field>
+                </v-row>
+            </v-form>
         </v-card-text>
 
         <v-row  class="justify-center">
