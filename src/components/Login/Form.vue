@@ -69,6 +69,13 @@
             </v-btn>
         </v-row>
 
+        <v-snackbar
+            v-model="snackbar"
+            :timeout="timeout"
+            color="error"
+            >
+            Error! E-mail or Password are not valid
+        </v-snackbar>
     </v-card>
 </template>
 
@@ -89,7 +96,9 @@
                     password: {
                         value: ''
                     }
-                }
+                },
+                snackbar: false,
+                timeout: 2000
             }
         },
         methods: {
