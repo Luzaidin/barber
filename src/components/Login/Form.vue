@@ -36,6 +36,7 @@
                 >
                     <v-text-field
                     v-model="form.password.value"
+                    :rules="form.password.rule"
                     :type="'password'"
                     label="Password"
                     required
@@ -97,7 +98,10 @@
                         ]
                     },
                     password: {
-                        value: ''
+                        value: '',
+                        rule: [
+                            v => !!v || 'Password is required',
+                        ]
                     }
                 },
                 snackbar: false,
