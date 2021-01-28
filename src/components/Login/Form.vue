@@ -68,6 +68,7 @@
             <v-btn
             color="primary"
             text
+            @click="signIn"
             >
                 Sign Up
             </v-btn>
@@ -117,6 +118,9 @@
                 } else {
                     this.snackbar = true
                 }
+            },
+            signIn(){
+                this.$router.push({name: "SignIn"});
             }
         },
     }
