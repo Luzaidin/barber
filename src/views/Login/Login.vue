@@ -6,19 +6,19 @@
             </v-col>
 
             <v-col cols="6">
-                <Form/>
+                <LoginForm/>
             </v-col>
         </v-row>
     </v-container>
 </template>
 
 <script>
-    import Form from '../../components/Login/Form'
+    import LoginForm from '../../components/Login/LoginForm'
 
     export default {
         name: 'Login',
         components: {
-            Form,
+            LoginForm,
         },
     }
 </script>

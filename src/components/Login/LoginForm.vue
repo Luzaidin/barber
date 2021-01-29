@@ -86,7 +86,7 @@
 
 <script>
     export default {
-        name: 'Form',
+        name: 'LoginForm',
         data(){
             return{
                 loading: false,
