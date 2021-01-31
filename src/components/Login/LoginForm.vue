@@ -14,7 +14,8 @@
         <v-card-title class="justify-center">Login Teste</v-card-title>
 
         <v-card-text>
-            <v-form               
+            <Form />
+            <!-- <v-form               
                 ref="form"
                 v-model="validForm"
             >
@@ -42,7 +43,7 @@
                     required
                     ></v-text-field>
                 </v-row>
-            </v-form>
+            </v-form> -->
         </v-card-text>
 
         <v-row  class="justify-center">
@@ -85,29 +86,33 @@
 </template>
 
 <script>
+import Form from '../Form/Form'
     export default {
         name: 'LoginForm',
+        components: {
+            Form,
+        },
         data(){
             return{
                 loading: false,
-                form: {
-                    email: {
-                        value: '',
-                        rule: [
-                            v => !!v || 'E-mail is required',
-                            v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-                        ]
-                    },
-                    password: {
-                        value: '',
-                        rule: [
-                            v => !!v || 'Password is required',
-                        ]
-                    }
-                },
+                // form: {
+                //     email: {
+                //         value: '',
+                //         rule: [
+                //             v => !!v || 'E-mail is required',
+                //             v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+                //         ]
+                //     },
+                //     password: {
+                //         value: '',
+                //         rule: [
+                //             v => !!v || 'Password is required',
+                //         ]
+                //     }
+                // },
                 snackbar: false,
                 timeout: 2000,
-                validForm: true
+                // validForm: true
             }
         },
         methods: {

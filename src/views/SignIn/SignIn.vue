@@ -1,12 +1,15 @@
 <template>
-    <div>
-        Sign In
-    </div>
+    <Form />
 </template>
 
 <script>
+import Form from '../Form/Form'
+
     export default {
-        name: 'SignIn'
+        name: 'SignIn',
+        components: {
+            Form
+        },
     }
 </script>
 
