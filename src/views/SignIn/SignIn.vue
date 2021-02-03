@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Form from '../Form/Form'
+import Form from '../../components/Form/Form'
 
     export default {
         name: 'SignIn',
