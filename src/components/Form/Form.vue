@@ -1,11 +1,11 @@
 <template>
             <v-form               
-                ref="form"
-                v-model="validForm"
+            ref="form"
+            v-model="validForm"
             >
                 <v-row
-                    align="center"
-                    class="mx-10"
+                align="center"
+                class="mx-10"
                 >
                     <v-text-field
                     v-model="form.email.value"
@@ -16,8 +16,8 @@
                 </v-row>
 
                 <v-row
-                    align="center"
-                    class="mx-10 my-10"
+                align="center"
+                class="mx-10 my-10"
                 >
                     <v-text-field
                     v-model="form.password.value"
@@ -27,12 +27,28 @@
                     required
                     ></v-text-field>
                 </v-row>
+
+                <v-row  
+                class="justify-center">
+                    <v-btn
+                    color="primary"
+                    text
+                    @click="validateInputs"
+                    >
+                    {{SubmitFormBtnName}}</v-btn>
+                </v-row>
             </v-form>
 </template>
 
 <script>
     export default {
         name: 'Form',
+        props: {
+            SubmitFormBtnName: {
+                type: String,
+                default:  '' 
+            },
+        },
         data(){
             return{
                 form: {
@@ -50,9 +66,15 @@
                         ]
                     }
                 },
-                validForm: true
+                validForm: false
             }
         },
+        methods: {
+            validateInputs() {
+                let inputsIsValid = this.$refs.form.validate()
+                this.$emit('validateForm', inputsIsValid);
+            }
+        }
     }
 </script>
 
