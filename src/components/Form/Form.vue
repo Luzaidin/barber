@@ -1,43 +1,43 @@
 <template>
-            <v-form               
-            ref="form"
-            v-model="validForm"
+    <v-form               
+    ref="form"
+    v-model="validForm"
+    >
+        <v-row
+        align="center"
+        class="mx-10"
+        >
+            <v-text-field
+            v-model="form.email.value"
+            :rules="form.email.rule"
+            label="E-mail"
+            required
+            ></v-text-field>
+        </v-row>
+
+        <v-row
+        align="center"
+        class="mx-10 my-10"
+        >
+            <v-text-field
+            v-model="form.password.value"
+            :rules="form.password.rule"
+            :type="'password'"
+            label="Password"
+            required
+            ></v-text-field>
+        </v-row>
+
+        <v-row  
+        class="justify-center">
+            <v-btn
+            color="primary"
+            text
+            @click="validateInputs"
             >
-                <v-row
-                align="center"
-                class="mx-10"
-                >
-                    <v-text-field
-                    v-model="form.email.value"
-                    :rules="form.email.rule"
-                    label="E-mail"
-                    required
-                    ></v-text-field>
-                </v-row>
-
-                <v-row
-                align="center"
-                class="mx-10 my-10"
-                >
-                    <v-text-field
-                    v-model="form.password.value"
-                    :rules="form.password.rule"
-                    :type="'password'"
-                    label="Password"
-                    required
-                    ></v-text-field>
-                </v-row>
-
-                <v-row  
-                class="justify-center">
-                    <v-btn
-                    color="primary"
-                    text
-                    @click="validateInputs"
-                    >
-                    {{SubmitFormBtnName}}</v-btn>
-                </v-row>
-            </v-form>
+            {{SubmitFormBtnName}}</v-btn>
+        </v-row>
+    </v-form>
 </template>
 
 <script>
