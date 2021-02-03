@@ -5,58 +5,27 @@
     >   
         <template slot="progress">
             <v-progress-linear
-                color="deep-blue"
-                height="10"
-                indeterminate
+            color="deep-blue"
+            height="10"
+            indeterminate
             ></v-progress-linear>
         </template>
 
-        <v-card-title class="justify-center">Login Teste</v-card-title>
+        <v-card-title 
+        class="justify-center"
+        >
+        Login Teste
+        </v-card-title>
 
         <v-card-text>
-            <Form />
-            <!-- <v-form               
-                ref="form"
-                v-model="validForm"
-            >
-                <v-row
-                    align="center"
-                    class="mx-10"
-                >
-                    <v-text-field
-                    v-model="form.email.value"
-                    :rules="form.email.rule"
-                    label="E-mail"
-                    required
-                    ></v-text-field>
-                </v-row>
-
-                <v-row
-                    align="center"
-                    class="mx-10 my-10"
-                >
-                    <v-text-field
-                    v-model="form.password.value"
-                    :rules="form.password.rule"
-                    :type="'password'"
-                    label="Password"
-                    required
-                    ></v-text-field>
-                </v-row>
-            </v-form> -->
+            <Form 
+            :SubmitFormBtnName=SubmitFormBtnName 
+            @validateForm="validateForm($event)"
+            />
         </v-card-text>
 
-        <v-row  class="justify-center">
-            <v-btn
-            color="primary"
-            text
-            @click="login"
-            >
-                Login
-            </v-btn>
-        </v-row>
-
-        <v-row  class="mt-4 justify-center">
+        <v-row  
+        class="mt-4 justify-center">
             <v-btn
             color="primary"
             text
@@ -65,7 +34,8 @@
             </v-btn>
         </v-row>
 
-        <v-row  class="mt-16 justify-center">
+        <v-row  
+        class="mt-16 justify-center">
             <v-btn
             color="primary"
             text
@@ -76,11 +46,11 @@
         </v-row>
 
         <v-snackbar
-            v-model="snackbar"
-            :timeout="timeout"
-            color="error"
-            >
-            Error! E-mail or Password are not valid
+        v-model="snackbar"
+        :timeout="timeout"
+        color="error"
+        >
+        Error! E-mail or Password are not valid
         </v-snackbar>
     </v-card>
 </template>
@@ -92,40 +62,24 @@ import Form from '../Form/Form'
         components: {
             Form,
         },
-        data(){
-            return{
+        data() {
+            return  {
+                SubmitFormBtnName: 'Login',
                 loading: false,
-                // form: {
-                //     email: {
-                //         value: '',
-                //         rule: [
-                //             v => !!v || 'E-mail is required',
-                //             v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-                //         ]
-                //     },
-                //     password: {
-                //         value: '',
-                //         rule: [
-                //             v => !!v || 'Password is required',
-                //         ]
-                //     }
-                // },
                 snackbar: false,
                 timeout: 2000,
-                // validForm: true
             }
         },
         methods: {
-            login() {
-                let inputsIsValid = this.$refs.form.validate()
-                if (inputsIsValid) {
+            signIn() {
+                this.$router.push({name: "SignIn"});
+            },
+            validateForm(formIsValid) {
+                if (formIsValid) {
                     this.$router.push({ name: "Home" });
                 } else {
-                    this.snackbar = true
+                    this.snackbar = true;
                 }
-            },
-            signIn(){
-                this.$router.push({name: "SignIn"});
             }
         },
     }
