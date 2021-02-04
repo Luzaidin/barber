@@ -1,5 +1,8 @@
 <template>
-    <Form />
+    <Form 
+    :SubmitFormBtnName=SubmitFormBtnName 
+    @validateForm="validateForm($event)"
+    />
 </template>
 
 <script>
@@ -9,6 +12,18 @@ import Form from '../../components/Form/Form'
         name: 'SignIn',
         components: {
             Form
+        },
+        data() {
+            return {
+                SubmitFormBtnName: 'Register'
+            }
+        },
+        methods: {
+            validateForm(formIsValid) {
+                if (formIsValid) {
+                    this.$router.push({ name: "Home" });
+                }
+            }
         },
     }
 </script>
