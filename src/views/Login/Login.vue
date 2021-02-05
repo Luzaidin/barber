@@ -1,11 +1,17 @@
 <template>
-    <v-container fill-height>    
-        <v-row >
-            <v-col cols="6">
+    <v-container 
+    fill-height
+    >    
+        <v-row>
+            <v-col
+            cols="6"
+            >
                 <p> Image </p>
             </v-col>
 
-            <v-col cols="6">
+            <v-col
+            cols="6"
+            >
                 <LoginForm/>
             </v-col>
         </v-row>
