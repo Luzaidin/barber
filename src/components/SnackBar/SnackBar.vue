@@ -10,7 +10,12 @@
 
 <script>
     export default {
-        
+        data() {
+            return {
+                snackbar: false,
+                timeout: 2000
+            }
+        },
     }
 </script>
 
