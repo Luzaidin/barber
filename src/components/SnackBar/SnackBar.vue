@@ -1,6 +1,6 @@
 <template>
     <v-snackbar
-    v-model="snackbar"
+    :value="snackbar"
     :timeout="timeout"
     color="error"
     >
@@ -10,10 +10,14 @@
 
 <script>
     export default {
-        data() {
-            return {
-                snackbar: false,
-                timeout: 2000
+        props: {
+            snackbar: {
+                type: Boolean,
+                default: false
+            },
+            timeout: {
+                type: Number,
+                default: 200
             }
         },
     }
