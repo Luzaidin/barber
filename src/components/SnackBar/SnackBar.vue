@@ -2,9 +2,9 @@
     <v-snackbar
     :value="snackbar"
     :timeout="timeout"
-    color="error"
+    :color="color"
     >
-    Error! E-mail or Password are not valid
+    {{mensage}}
     </v-snackbar>
 </template>
 
@@ -18,6 +18,14 @@
             timeout: {
                 type: Number,
                 default: 200
+            },
+            color: {
+                type: String,
+                default: "error"
+            },
+            mensage: {
+                type: String,
+                default: "Error! E-mail or Password are not valid"
             }
         },
     }
