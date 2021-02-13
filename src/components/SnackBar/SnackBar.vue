@@ -1,6 +1,6 @@
 <template>
     <v-snackbar
-    :value="snackbar"
+    v-model="snackValue"
     :timeout="timeout"
     :color="color"
     >
@@ -10,14 +10,15 @@
 
 <script>
     export default {
+        name: 'SnackBar',
         props: {
-            snackbar: {
+            value: {
                 type: Boolean,
-                default: false
+                defaul: false
             },
             timeout: {
                 type: Number,
-                default: 200
+                default: 2000
             },
             color: {
                 type: String,
@@ -26,6 +27,17 @@
             mensage: {
                 type: String,
                 default: "Error! E-mail or Password are not valid"
+            }
+        },
+        computed: {
+            snackValue: {
+                get() {
+                    return this.value 
+                },
+                set(newValue) {
+                    this.$emit('input', newValue);
+                }
+
             }
         },
     }
