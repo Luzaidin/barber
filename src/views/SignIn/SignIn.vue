@@ -17,27 +17,38 @@
                 @validateForm="validateForm($event)"
                 />
             </v-card-text>
+
+            <SnackBar
+            v-model="SnackBar.value"
+            />
         </v-card>
     </v-container>
 </template>
 
 <script>
 import Form from '../../components/Form/Form'
+import SnackBar from '../../components/SnackBar/SnackBar'
 
     export default {
         name: 'SignIn',
         components: {
-            Form
+            Form,
+            SnackBar
         },
         data() {
             return {
-                SubmitFormBtnName: 'Register'
+                SubmitFormBtnName: 'Register',
+                SnackBar: {
+                    value: false
+                }
             }
         },
         methods: {
             validateForm(formIsValid) {
                 if (formIsValid) {
                     this.$router.push({ name: "Home" });
+                } else{
+                    this.SnackBar.value = true;
                 }
             }
         },
