@@ -45,29 +45,28 @@
             </v-btn>
         </v-row>
 
-        <v-snackbar
-        v-model="snackbar"
-        :timeout="timeout"
-        color="error"
-        >
-        Error! E-mail or Password are not valid
-        </v-snackbar>
+        <SnackBar
+        v-model="SnackBar.value"
+        />
     </v-card>
 </template>
 
 <script>
 import Form from '../Form/Form'
+import SnackBar from '../SnackBar/SnackBar'
     export default {
         name: 'LoginForm',
         components: {
             Form,
+            SnackBar
         },
         data() {
             return  {
                 SubmitFormBtnName: 'Login',
                 loading: false,
-                snackbar: false,
-                timeout: 2000,
+                SnackBar: {
+                    value: false
+                }
             }
         },
         methods: {
@@ -78,7 +77,7 @@ import Form from '../Form/Form'
                 if (formIsValid) {
                     this.$router.push({ name: "Home" });
                 } else {
-                    this.snackbar = true;
+                    this.SnackBar.value = true;
                 }
             }
         },
