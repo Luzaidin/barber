@@ -24,26 +24,16 @@
             />
         </v-card-text>
 
-        <v-row  
-        class="mt-4 justify-center">
-            <v-btn
-            color="primary"
-            text
-            >
-                Forgot password?
-            </v-btn>
-        </v-row>
+        <ButtonCenter
+        class="mt-4"
+        :mensage="ButtonMensage.forgotPassword"
+        />
 
-        <v-row  
-        class="mt-16 justify-center">
-            <v-btn
-            color="primary"
-            text
-            @click="signIn"
-            >
-                Sign Up
-            </v-btn>
-        </v-row>
+        <ButtonCenter
+        class="mt-16"
+        :mensage="ButtonMensage.signIn"
+        :clickMethod="signIn"
+        />
 
         <SnackBar
         v-model="SnackBar.value"
@@ -54,11 +44,14 @@
 <script>
 import Form from '../Form/Form'
 import SnackBar from '../SnackBar/SnackBar'
+import ButtonCenter from '../Button/ButtonCenter'
+
     export default {
         name: 'LoginForm',
         components: {
             Form,
-            SnackBar
+            SnackBar,
+            ButtonCenter
         },
         data() {
             return  {
@@ -66,6 +59,10 @@ import SnackBar from '../SnackBar/SnackBar'
                 loading: false,
                 SnackBar: {
                     value: false
+                },
+                ButtonMensage: {
+                    forgotPassword: 'Forgot password?',
+                    signIn: 'Sign In'
                 }
             }
         },
