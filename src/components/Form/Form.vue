@@ -28,21 +28,21 @@
             ></v-text-field>
         </v-row>
 
-        <v-row  
-        class="justify-center">
-            <v-btn
-            color="primary"
-            text
-            @click="validateInputs"
-            >
-            {{SubmitFormBtnName}}</v-btn>
-        </v-row>
+        <ButtonCenter
+        :mensage="SubmitFormBtnName"
+        :clickMethod="validateInputs"
+        />
     </v-form>
 </template>
 
 <script>
+import ButtonCenter from '../Button/ButtonCenter'
+
     export default {
         name: 'Form',
+        components: {
+            ButtonCenter
+        },
         props: {
             SubmitFormBtnName: {
                 type: String,
