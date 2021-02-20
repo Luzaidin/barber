@@ -5,7 +5,7 @@
     >   
         <template slot="progress">
             <v-progress-linear
-            color="deep-blue"
+            color="blue darken-4"
             height="10"
             indeterminate
             ></v-progress-linear>
@@ -71,8 +71,10 @@ import ButtonCenter from '../Button/ButtonCenter'
                 this.$router.push({name: "SignIn"});
             },
             validateForm(formIsValid) {
+                this.loading = true;
                 if (formIsValid) {
                     this.$router.push({ name: "Home" });
+                    this.loading = false;
                 } else {
                     this.SnackBar.value = true;
                 }
