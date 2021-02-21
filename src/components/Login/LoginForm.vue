@@ -27,6 +27,7 @@
         <ButtonCenter
         class="mt-4"
         :mensage="ButtonMensage.forgotPassword"
+        :clickMethod="sendPassword"
         />
 
         <ButtonCenter
@@ -71,13 +72,16 @@ import ButtonCenter from '../Button/ButtonCenter'
                 this.$router.push({name: "SignIn"});
             },
             validateForm(formIsValid) {
-                this.loading = true;
+                // this.loading = true;
                 if (formIsValid) {
                     this.$router.push({ name: "Home" });
-                    this.loading = false;
+                    // this.loading = false;
                 } else {
                     this.SnackBar.value = true;
                 }
+            },
+            sendPassword(){
+                alert('Um novo email foi enviado');
             }
         },
     }
