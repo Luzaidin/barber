@@ -134,6 +134,7 @@
 
 <script>
   export default {
+    name: 'Calendar',
     data: () => ({
       focus: '',
       type: 'month',
