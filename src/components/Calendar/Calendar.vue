@@ -152,9 +152,14 @@
       names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
     }),
     mounted () {
-    
+      this.getEvents()
     },
     methods: { 
+      getEvents() {
+        let events = [];
+        this.events = events;
+
+      }
     }
   }
 </script>
