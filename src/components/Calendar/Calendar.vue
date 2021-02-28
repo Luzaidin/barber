@@ -133,6 +133,8 @@
 </template>
 
 <script>
+import { db } from '@/main'
+
   export default {
     name: 'Calendar',
     data: () => ({
@@ -155,8 +157,12 @@
       this.getEvents()
     },
     methods: { 
-      getEvents() {
+      async getEvents() {
+        let cortes = await db.collection("events").get()
         let events = [];
+        cortes.forEach(data => {
+         console.log("data", data) 
+        });
         this.events = events;
 
       }
