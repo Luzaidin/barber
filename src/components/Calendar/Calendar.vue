@@ -164,7 +164,9 @@ import { db } from '@/main'
          console.log("data", data) 
         });
         this.events = events;
-
+      },
+      getEventColor(evt) {
+        return evt.color
       }
     }
   }
