@@ -167,7 +167,25 @@ import { db } from '@/main'
       },
       getEventColor(evt) {
         return evt.color
-      }
+      },
+      showEvent ({ nativeEvent, event }) {
+        const open = () => {
+          this.selectedEvent = event
+          this.selectedElement = nativeEvent.target
+          setTimeout(() => {
+            this.selectedOpen = true
+          }, 10)
+        }
+
+        if (this.selectedOpen) {
+          this.selectedOpen = false
+          setTimeout(open, 10)
+        } else {
+          open()
+        }
+
+        nativeEvent.stopPropagation()
+      },
     }
   }
 </script>
