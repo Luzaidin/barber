@@ -186,6 +186,10 @@ import { db } from '@/main'
 
         nativeEvent.stopPropagation()
       },
+      viewDay ({ date }) {
+        this.focus = date
+        this.type = 'day'
+      },
     }
   }
 </script>
