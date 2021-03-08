@@ -190,6 +190,9 @@ import { db } from '@/main'
         this.focus = date
         this.type = 'day'
       },
+      setToday () {
+        this.focus = ''
+      },
     }
   }
 </script>
