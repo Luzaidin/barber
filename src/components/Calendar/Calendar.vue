@@ -196,6 +196,9 @@ import { db } from '@/main'
       prev () {
         this.$refs.calendar.prev()
       },
+      next () {
+        this.$refs.calendar.next()
+      },
     }
   }
 </script>
