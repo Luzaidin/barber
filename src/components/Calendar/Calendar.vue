@@ -193,6 +193,9 @@ import { db } from '@/main'
       setToday () {
         this.focus = ''
       },
+      prev () {
+        this.$refs.calendar.prev()
+      },
     }
   }
 </script>
