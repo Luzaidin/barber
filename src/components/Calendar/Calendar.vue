@@ -199,6 +199,9 @@ import { db } from '@/main'
       next () {
         this.$refs.calendar.next()
       },
+      rnd (a, b) {
+        return Math.floor((b - a + 1) * Math.random()) + a
+      },
     }
   }
 </script>
