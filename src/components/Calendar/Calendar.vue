@@ -154,7 +154,8 @@ import { db } from '@/main'
       names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
     }),
     mounted () {
-      this.getEvents()
+      this.getEvents(),
+      this.$refs.calendar.checkChange()
     },
     methods: { 
       async getEvents() {
