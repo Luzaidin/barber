@@ -108,6 +108,9 @@
               <v-spacer></v-spacer>
             </v-toolbar>
             <v-card-text>
+              <form v-if="currentlyEditing != selectedEvent.id">
+                {{selectedEvent.details}}
+              </form>
               <span v-html="selectedEvent.details"></span>
             </v-card-text>
             <v-card-actions>
