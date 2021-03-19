@@ -108,7 +108,7 @@
               <v-spacer></v-spacer>
             </v-toolbar>
             <v-card-text>
-              <form v-if="currentlyEditing != selectedEvent.id">
+              <form v-if="currentlyEditing !== selectedEvent.id">
                 {{selectedEvent.details}}
               </form>
               <form  v-else>
@@ -130,6 +130,13 @@
                 @click="selectedOpen = false"
               >
                 Cancel
+              </v-btn>
+              <v-btn
+                text
+                v-if="currentlyEditing !== selectedEvent.id"
+                @click.prevent="editEvent(selectedEvent)"
+              >
+                Edit
               </v-btn>
             </v-card-actions>
           </v-card>
