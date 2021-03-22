@@ -208,6 +208,9 @@ import { db } from '@/main'
 
         nativeEvent.stopPropagation()
       },
+      editEvent (event){
+        this.currentlyEditing = event.id;
+      },
       viewDay ({ date }) {
         this.focus = date
         this.type = 'day'
