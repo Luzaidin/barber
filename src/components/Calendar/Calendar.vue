@@ -187,6 +187,14 @@ import { db } from '@/main'
         });
         this.events = events;
       },
+      async updateEvent(ev){
+        await db.collection('events').doc(this.currentlyEditing).update({
+          details: ev.details
+        });
+        
+        this.selectedOpen = false;
+        this.currentlyEditing = null;
+      },
       getEventColor(evt) {
         return evt.color
       },
