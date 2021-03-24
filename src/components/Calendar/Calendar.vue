@@ -195,6 +195,12 @@ import { db } from '@/main'
         this.selectedOpen = false;
         this.currentlyEditing = null;
       },
+      async deleteEvent(ev){
+        await db.collection('events').doc(ev).delete();
+        
+        this.selectedOpen = false;
+        this.getEvents();
+      },
       getEventColor(evt) {
         return evt.color
       },
