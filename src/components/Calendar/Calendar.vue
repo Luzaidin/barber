@@ -6,6 +6,13 @@
           flat
         >
           <v-btn
+            color="primary"
+            class="mr-4"
+            @click="dialog = true"
+            dark
+          >
+            New Event
+          <v-btn
             outlined
             class="mr-4"
             color="grey darken-2"
