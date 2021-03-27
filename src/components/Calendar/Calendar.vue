@@ -80,6 +80,11 @@
           </v-menu>
         </v-toolbar>
       </v-sheet>
+
+      <v-dialog v-model="dialog" max-width="500">
+
+      </v-dialog>
+      
       <v-sheet height="600">
         <v-calendar
           ref="calendar"
