@@ -82,7 +82,10 @@
       </v-sheet>
 
       <v-dialog v-model="dialog" max-width="500">
-
+        <v-card>
+          <v-container>
+          </v-container>
+        </v-card>
       </v-dialog>
       
       <v-sheet height="600">
