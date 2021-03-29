@@ -84,6 +84,11 @@
       <v-dialog v-model="dialog" max-width="500">
         <v-card>
           <v-container>
+            <v-form @submit.prevent="addEvent">
+              <v-text-field v-model="name" type="text" label="event name"></v-text-field>
+              <v-text-field v-model="startDate" type="date" label="initial date"></v-text-field>
+              <v-text-field v-model="endDate" type="date" label="end date"></v-text-field>
+            </v-form>
           </v-container>
         </v-card>
       </v-dialog>
