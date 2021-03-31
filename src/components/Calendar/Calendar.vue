@@ -88,6 +88,9 @@
               <v-text-field v-model="name" type="text" label="event name"></v-text-field>
               <v-text-field v-model="startDate" type="date" label="initial date"></v-text-field>
               <v-text-field v-model="endDate" type="date" label="end date"></v-text-field>
+              <v-btn type="submit" color="primary" class="mr-4" @click.stop="dialog = false">
+                Create Event
+              </v-btn>
             </v-form>
           </v-container>
         </v-card>
