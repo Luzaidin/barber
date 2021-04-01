@@ -210,7 +210,14 @@ import { db } from '@/main'
         });
         this.events = events;
       },
-      async updateEvent(ev){
+      async addEvent() {
+        if(this.name && this.starDate && this.endDate) {
+
+        } else {
+          alert('Name, Star date and end date are required');
+        }
+      },
+      async updateEvent(ev) {
         await db.collection('events').doc(this.currentlyEditing).update({
           details: ev.details
         });
