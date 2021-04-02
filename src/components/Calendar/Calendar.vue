@@ -212,7 +212,11 @@ import { db } from '@/main'
       },
       async addEvent() {
         if(this.name && this.starDate && this.endDate) {
-
+          await db.collection('events').add({
+            name: this.name,
+            starDate: this.starDate,
+            endDate: this.endDate
+          });
         } else {
           alert('Name, Star date and end date are required');
         }
