@@ -217,6 +217,10 @@ import { db } from '@/main'
             starDate: this.starDate,
             endDate: this.endDate
           });
+          this.getEvents()
+          this.name = "";
+          this.starDate = "";
+          this.endDate = "";
         } else {
           alert('Name, Star date and end date are required');
         }
