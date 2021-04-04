@@ -12,6 +12,7 @@
             dark
           >
             New Event
+          </v-btn>
           <v-btn
             outlined
             class="mr-4"
