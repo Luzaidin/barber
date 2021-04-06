@@ -197,7 +197,8 @@ import { db } from '@/main'
       events: [],
       colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
       names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
-      dialog: false
+      dialog: false,
+      name: ''
     }),
     mounted () {
       this.getEvents(),
