@@ -199,7 +199,8 @@ import { db } from '@/main'
       names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
       dialog: false,
       name: '',
-      startDate: ``
+      startDate: '',
+      endDate: ''
     }),
     mounted () {
       this.getEvents(),
