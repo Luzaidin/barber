@@ -200,7 +200,8 @@ import { db } from '@/main'
       dialog: false,
       name: '',
       startDate: '',
-      endDate: ''
+      endDate: '',
+      currentlyEditing: null
     }),
     mounted () {
       this.getEvents(),
