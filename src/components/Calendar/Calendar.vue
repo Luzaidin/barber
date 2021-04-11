@@ -86,6 +86,14 @@
         <v-card>
           <v-container>
             <v-form @submit.prevent="addEvent">
+              <v-select
+              v-model="haircut_type"
+              :items="haircutTypes"
+              menu-props="auto"
+              label="Select"
+              hide-details
+              single-line
+              ></v-select>
               <v-text-field v-model="name" type="text" label="event name"></v-text-field>
               <v-text-field v-model="startDate" type="date" label="initial date"></v-text-field>
               <v-text-field v-model="endDate" type="date" label="end date"></v-text-field>
@@ -201,7 +209,9 @@ import { db } from '@/main'
       name: '',
       startDate: '',
       endDate: '',
-      currentlyEditing: null
+      currentlyEditing: null,
+      haircut_type: 'Barba',
+      haircutTypes: ['Cabelo', 'Barba']
     }),
     mounted () {
       this.getEvents(),
