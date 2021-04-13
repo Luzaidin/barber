@@ -87,6 +87,14 @@
           <v-container>
             <v-form @submit.prevent="addEvent">
               <v-select
+              v-model="payment_type"
+              :items="paymentTypes"
+              menu-props="auto"
+              label="Select"
+              hide-details
+              single-line
+              ></v-select>
+              <v-select
               v-model="haircut_type"
               :items="haircutTypes"
               menu-props="auto"
@@ -211,7 +219,9 @@ import { db } from '@/main'
       endDate: '',
       currentlyEditing: null,
       haircut_type: 'Barba',
-      haircutTypes: ['Cabelo', 'Barba']
+      haircutTypes: ['Cabelo', 'Barba'],
+      payment_type: 'Money',
+      paymentTypes: ['Money', 'Card']
     }),
     mounted () {
       this.getEvents(),
