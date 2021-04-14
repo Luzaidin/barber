@@ -102,6 +102,7 @@
               hide-details
               single-line
               ></v-select>
+              <v-text-field v-model="haircut_price" type="text" label="Price" readonly=True></v-text-field>
               <v-text-field v-model="name" type="text" label="event name"></v-text-field>
               <v-text-field v-model="startDate" type="date" label="initial date"></v-text-field>
               <v-text-field v-model="endDate" type="date" label="end date"></v-text-field>
@@ -221,7 +222,8 @@ import { db } from '@/main'
       haircut_type: 'Barba',
       haircutTypes: ['Cabelo', 'Barba'],
       payment_type: 'Money',
-      paymentTypes: ['Money', 'Card']
+      paymentTypes: ['Money', 'Card'],
+      haircut_price: 0
     }),
     mounted () {
       this.getEvents(),
