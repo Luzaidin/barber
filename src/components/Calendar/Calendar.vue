@@ -103,7 +103,6 @@
               single-line
               ></v-select>
               <v-text-field v-model="haircut_price" type="text" label="Price" readonly=True></v-text-field>
-              <v-text-field v-model="name" type="text" label="event name"></v-text-field>
               <v-text-field v-model="startDate" type="date" label="initial date"></v-text-field>
               <v-text-field v-model="endDate" type="date" label="end date"></v-text-field>
               <v-btn type="submit" color="primary" class="mr-4" @click.stop="dialog = false">
