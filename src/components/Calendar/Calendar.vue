@@ -104,7 +104,7 @@
               ></v-select>
               <v-text-field v-model="haircut_price" type="text" label="Price" readonly=True></v-text-field>
               <v-text-field v-model="startTime" type="time" label="initial hour" readonly=True></v-text-field>
-              <v-text-field v-model="startDate" type="date" label="initial date"></v-text-field>
+              <v-text-field v-model="endTime" type="time" label="end hour" readonly=True></v-text-field>
               <v-btn type="submit" color="primary" class="mr-4" @click.stop="dialog = false">
                 Create Event
               </v-btn>
@@ -223,7 +223,8 @@ import { db } from '@/main'
       payment_type: 'Money',
       paymentTypes: ['Money', 'Card'],
       haircut_price: 0,
-      startTime: "00:00"
+      startTime: "00:00",
+      endTime: "00:00"
     }),
     mounted () {
       this.getEvents(),
