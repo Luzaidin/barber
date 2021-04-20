@@ -87,20 +87,20 @@
           <v-container>
             <v-form @submit.prevent="addEvent">
               <v-select
-              v-model="payment_type"
-              :items="paymentTypes"
-              menu-props="auto"
-              label="Select"
-              hide-details
-              single-line
+                v-model="payment_type"
+                :items="paymentTypes"
+                menu-props="auto"
+                label="Select"
+                hide-details
+                single-line
               ></v-select>
               <v-select
-              v-model="haircut_type"
-              :items="haircutTypes"
-              menu-props="auto"
-              label="Select"
-              hide-details
-              single-line
+                v-model="haircut_type"
+                :items="haircutTypes"
+                menu-props="auto"
+                label="Select"
+                hide-details
+                single-line
               ></v-select>
               <v-text-field v-model="haircut_price" type="text" label="Price" readonly=True></v-text-field>
               <v-text-field v-model="startTime" type="time" label="initial hour" readonly=True></v-text-field>
@@ -153,11 +153,11 @@
               </form>
               <form  v-else>
                 <textarea-autosize
-                v-model="selectedEvent.details"
-                type="text"
-                style="width:100%"
-                :min-height="100"
-                placeholder="add note"
+                  v-model="selectedEvent.details"
+                  type="text"
+                  style="width:100%"
+                  :min-height="100"
+                  placeholder="add note"
                 >
                 </textarea-autosize>
               </form>
@@ -240,16 +240,18 @@ import { db } from '@/main'
         this.events = events;
       },
       async addEvent() {
-        if(this.name && this.starDate && this.endDate) {
+        if(this.payment_type && this.haircut_type && this.startTime && this.endTime) {
           await db.collection('events').add({
-            name: this.name,
-            starDate: this.starDate,
-            endDate: this.endDate
+            payment_type: this.payment_type,
+            starhaircut_typeDate: this.haircut_type,
+            startTime: this.startTime,
+            endTime: this.endTime
           });
           this.getEvents()
-          this.name = "";
-          this.starDate = "";
-          this.endDate = "";
+          this.payment_type = "";
+          this.haircut_type = "";
+          this.startTime = "";
+          this.endTime = "";
         } else {
           alert('Name, Star date and end date are required');
         }
