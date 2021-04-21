@@ -102,9 +102,9 @@
                 hide-details
                 single-line
               ></v-select>
-              <v-text-field v-model="haircut_price" type="text" label="Price" readonly=True></v-text-field>
-              <v-text-field v-model="startTime" type="time" label="initial hour" readonly=True></v-text-field>
-              <v-text-field v-model="endTime" type="time" label="end hour" readonly=True></v-text-field>
+              <v-text-field v-model="haircut_price" type="text" label="Price" readonly></v-text-field>
+              <v-text-field v-model="startTime" type="time" label="initial hour" readonly></v-text-field>
+              <v-text-field v-model="endTime" type="time" label="end hour" readonly></v-text-field>
               <v-btn type="submit" color="primary" class="mr-4" @click.stop="dialog = false">
                 Create Event
               </v-btn>
