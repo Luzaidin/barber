@@ -222,6 +222,16 @@ import { db } from '@/main'
       haircutTypes: ['Cabelo', 'Barba'],
       payment_type: 'Money',
       paymentTypes: ['Money', 'Card'],
+      haircut_type_and_prices: [
+        {
+          type: 'Cabelo',
+          price: 10
+        },
+        {
+          type: 'Barba',
+          price: 15
+        },
+      ],
       haircut_price: 0,
       startTime: "00:00",
       endTime: "00:00"
