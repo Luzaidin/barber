@@ -101,6 +101,7 @@
                 label="Select"
                 hide-details
                 single-line
+                @change="changePrice()"
               ></v-select>
               <v-text-field v-model="haircut_price" type="text" label="Price" readonly></v-text-field>
               <v-text-field v-model="startTime" type="time" label="initial hour" readonly></v-text-field>
@@ -283,7 +284,7 @@ import { db } from '@/main'
       getEventColor(evt) {
         return evt.color
       },
-      showEvent ({ nativeEvent, event }) {
+      showEvent({ nativeEvent, event }) {
         const open = () => {
           this.selectedEvent = event
           this.selectedElement = nativeEvent.target
@@ -301,26 +302,26 @@ import { db } from '@/main'
 
         nativeEvent.stopPropagation()
       },
-      editEvent (event){
+      editEvent(event){
         this.currentlyEditing = event.id;
       },
-      viewDay ({ date }) {
+      viewDay({ date }) {
         this.focus = date
         this.type = 'day'
       },
-      setToday () {
+      setToday() {
         this.focus = ''
       },
-      prev () {
+      prev() {
         this.$refs.calendar.prev()
       },
-      next () {
+      next() {
         this.$refs.calendar.next()
       },
-      rnd (a, b) {
+      rnd(a, b) {
         return Math.floor((b - a + 1) * Math.random()) + a
       },
-      updateRange ({ start, end }) {
+      updateRange({ start, end }) {
         const events = []
 
         const min = new Date(`${start.date}T00:00:00`)
@@ -345,6 +346,13 @@ import { db } from '@/main'
         }
 
         this.events = events
+      },
+      changePrice() {
+        for (let haircut of this.haircut_type_and_prices) {
+          if (haircut.type == this.haircut_type){
+            this.haircut_price = haircut.price
+          } 
+        }
       },
     }
   }
