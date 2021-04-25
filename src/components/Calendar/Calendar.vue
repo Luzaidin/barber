@@ -86,14 +86,7 @@
         <v-card>
           <v-container>
             <v-form @submit.prevent="addEvent">
-              <v-select
-                v-model="payment_type"
-                :items="paymentTypes"
-                menu-props="auto"
-                label="Select"
-                hide-details
-                single-line
-              ></v-select>
+              <v-text-field v-model="haircut_day" type="date" label="Haircut Day"></v-text-field>
               <v-select
                 v-model="haircut_type"
                 :items="haircutTypes"
@@ -104,6 +97,14 @@
                 @change="changePrice()"
               ></v-select>
               <v-text-field v-model="haircut_price" type="text" label="Price" readonly></v-text-field>
+              <v-select
+                v-model="payment_type"
+                :items="paymentTypes"
+                menu-props="auto"
+                label="Select"
+                hide-details
+                single-line
+              ></v-select>
               <v-text-field v-model="startTime" type="time" label="initial hour" readonly></v-text-field>
               <v-text-field v-model="endTime" type="time" label="end hour" readonly></v-text-field>
               <v-btn type="submit" color="primary" class="mr-4" @click.stop="dialog = false">
@@ -235,7 +236,8 @@ import { db } from '@/main'
       ],
       haircut_price: 0,
       startTime: "00:00",
-      endTime: "00:00"
+      endTime: "00:00",
+      haircut_day: ""
     }),
     mounted () {
       this.getEvents(),
