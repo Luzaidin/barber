@@ -86,7 +86,12 @@
         <v-card>
           <v-container>
             <v-form @submit.prevent="addEvent">
-              <v-text-field v-model="haircut_day" type="date" label="Haircut Day"></v-text-field>
+              <v-text-field 
+                v-model="haircut_day" 
+                type="date" 
+                label="Haircut Day"
+                @change="validateHaircutDay()"
+              ></v-text-field>
               <v-select
                 v-model="haircut_type"
                 :items="haircutTypes"
@@ -355,6 +360,19 @@ import { db } from '@/main'
             this.haircut_price = haircut.price
           } 
         }
+      },
+      validateHaircutDay() {
+        let haircut_date = this.haircut_day.split('-')
+
+        let year = parseInt(haircut_date[0])
+        let month = parseInt(haircut_date[1])
+        let day = parseInt(haircut_date[2])
+        let date = new Date(year, month, day)
+
+        if (date.getDay() == 2 || date.getDay() == 3) { // Sunday - Monday
+          this.haircut_day = ""
+          alert('Dia invalido')
+        }  
       },
     }
   }
