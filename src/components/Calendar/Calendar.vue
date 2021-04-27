@@ -110,7 +110,12 @@
                 hide-details
                 single-line
               ></v-select>
-              <v-text-field v-model="startTime" type="time" label="initial hour" readonly></v-text-field>
+              <v-text-field 
+                v-model="startTime" 
+                type="time" 
+                label="initial hour" 
+                @change="validateTime()"
+              ></v-text-field>
               <v-text-field v-model="endTime" type="time" label="end hour" readonly></v-text-field>
               <v-btn type="submit" color="primary" class="mr-4" @click.stop="dialog = false">
                 Create Event
@@ -374,6 +379,15 @@ import { db } from '@/main'
           alert('Dia invalido')
         }  
       },
+      validateTime() {
+        let time = this.startTime.split(':')
+        let openBarberTime = 9
+        let closeBarbarTime = 20
+        if (parseInt(time[0]) < openBarberTime ||  parseInt(time[0]) > closeBarbarTime){
+          this.startTime = "00:00"
+          alert('Hora invalida')
+        }
+      }
     }
   }
 </script>
