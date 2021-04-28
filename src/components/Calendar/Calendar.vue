@@ -247,7 +247,8 @@ import { db } from '@/main'
       haircut_price: 0,
       startTime: "00:00",
       endTime: "00:00",
-      haircut_day: ""
+      haircut_day: "",
+      haircutDate: ''
     }),
     mounted () {
       this.getEvents(),
@@ -377,17 +378,19 @@ import { db } from '@/main'
         if (date.getDay() == 2 || date.getDay() == 3) { // Sunday - Monday
           this.haircut_day = ""
           alert('Dia invalido')
-        }  
+        } else {
+          this.haircutDate = date;
+        }
       },
       validateTime() {
         let time = this.startTime.split(':')
         let openBarberTime = 9
         let closeBarbarTime = 20
-        if (parseInt(time[0]) < openBarberTime ||  parseInt(time[0]) > closeBarbarTime){
+        if (parseInt(time[0]) < openBarberTime ||  parseInt(time[0]) > closeBarbarTime) {
           this.startTime = "00:00"
           alert('Hora invalida')
         }
-      }
+      } 
     }
   }
 </script>
