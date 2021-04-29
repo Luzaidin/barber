@@ -237,11 +237,13 @@ import { db } from '@/main'
       haircut_type_and_prices: [
         {
           type: 'Cabelo',
-          price: 10
+          price: 10,
+          time: 20
         },
         {
           type: 'Barba',
-          price: 15
+          price: 15,
+          time: 15
         },
       ],
       haircut_price: 0,
@@ -389,6 +391,21 @@ import { db } from '@/main'
         if (parseInt(time[0]) < openBarberTime ||  parseInt(time[0]) > closeBarbarTime) {
           this.startTime = "00:00"
           alert('Hora invalida')
+        } else{
+          let minutes = 0;
+          let hour = parseInt(time[0]);
+          for (let haircut of this.haircut_type_and_prices) {
+            if (haircut.type == this.haircut_type){
+              minutes = parseInt(time[1]) + haircut.time;
+              if (minutes >= 60){
+                minutes = minutes - 60;
+                hour++;
+                break
+              }
+            } 
+          }
+          let endHaircut = String(hour) + ":" + String(minutes);
+          this.endTime = endHaircut
         }
       } 
     }
