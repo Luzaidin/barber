@@ -11,7 +11,7 @@
             @click="dialog = true"
             dark
           >
-            New Event
+            Book
           </v-btn>
           <v-btn
             outlined
