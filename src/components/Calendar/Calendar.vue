@@ -253,15 +253,18 @@ import { db } from '@/main'
       haircutDate: ''
     }),
     mounted () {
-      this.getEvents(),
-      this.$refs.calendar.checkChange()
+      this.getEvents()
+      //this.$refs.calendar.checkChange()
     },
     methods: { 
       async getEvents() {
         let cortes = await db.collection("events").get()
         let events = [];
-        cortes.forEach(data => {
-         console.log("data", data) 
+        cortes.forEach(doc => {
+         console.log("data", doc.data()) 
+         let appData = doc.data();
+         appData.id = doc.id;
+         events.push(appData);
         });
         this.events = events;
       },
