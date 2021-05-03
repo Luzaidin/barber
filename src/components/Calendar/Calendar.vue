@@ -250,7 +250,11 @@ import { db } from '@/main'
       startTime: "00:00",
       endTime: "00:00",
       haircut_day: "",
-      haircutDate: ''
+      haircutDate: '',
+      color:'#004080',
+      user: {
+        email: "test@test.com"
+      }
     }),
     mounted () {
       this.getEvents()
@@ -271,10 +275,15 @@ import { db } from '@/main'
       async addEvent() {
         if(this.payment_type && this.haircut_type && this.startTime && this.endTime) {
           await db.collection('events').add({
-            payment_type: this.payment_type,
-            starhaircut_typeDate: this.haircut_type,
-            startTime: this.startTime,
-            endTime: this.endTime
+            start: this.haircut_day,
+            end: ths.haircut_day,
+            tipo_pagamento: this.payment_type,
+            tipo_de_corte: this.haircut_type,
+            horario_inicial: this.startTime,
+            horario_final: this.endTime,
+            color: ths.color,
+            name: this.haircut_type,
+            email: this.user.email
           });
           this.getEvents()
           this.payment_type = "";
