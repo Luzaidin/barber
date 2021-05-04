@@ -276,20 +276,22 @@ import { db } from '@/main'
         if(this.payment_type && this.haircut_type && this.startTime && this.endTime) {
           await db.collection('events').add({
             start: this.haircut_day,
-            end: ths.haircut_day,
+            end: this.haircut_day,
             tipo_pagamento: this.payment_type,
             tipo_de_corte: this.haircut_type,
             horario_inicial: this.startTime,
             horario_final: this.endTime,
-            color: ths.color,
+            color: this.color,
             name: this.haircut_type,
             email: this.user.email
           });
           this.getEvents()
+          this.haircut_day = "";
           this.payment_type = "";
           this.haircut_type = "";
           this.startTime = "";
           this.endTime = "";
+          this.color = "#004080";
         } else {
           alert('Name, Star date and end date are required');
         }
