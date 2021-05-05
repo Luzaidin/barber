@@ -230,30 +230,30 @@ import { db } from '@/main'
       startDate: '',
       endDate: '',
       currentlyEditing: null,
-      haircut_type: 'Barba',
+      haircut_type: 'Cabelo',
       haircutTypes: ['Cabelo', 'Barba'],
       payment_type: 'Money',
       paymentTypes: ['Money', 'Card'],
       haircut_type_and_prices: [
         {
           type: 'Cabelo',
-          price: 10,
+          price: '10',
           time: 20
         },
         {
           type: 'Barba',
-          price: 15,
+          price: '15',
           time: 15
         },
       ],
-      haircut_price: 0,
-      startTime: "00:00",
-      endTime: "00:00",
-      haircut_day: "",
+      haircut_price: '10',
+      startTime: '00:00',
+      endTime: '00:00',
+      haircut_day: '',
       haircutDate: '',
       color:'#004080',
       user: {
-        email: "test@test.com"
+        email: 'test@test.com'
       }
     }),
     mounted () {
@@ -283,15 +283,17 @@ import { db } from '@/main'
             horario_final: this.endTime,
             color: this.color,
             name: this.haircut_type,
-            email: this.user.email
+            email: this.user.email,
+            //preco: this.price
           });
           this.getEvents()
           this.haircut_day = "";
-          this.payment_type = "";
-          this.haircut_type = "";
-          this.startTime = "";
-          this.endTime = "";
-          this.color = "#004080";
+          this.payment_type = "Money";
+          this.haircut_type = "Cabelo";
+          this.startTime = '';
+          this.endTime = '';
+          this.price = '10';
+          this.color = '#004080';
         } else {
           alert('Name, Star date and end date are required');
         }
