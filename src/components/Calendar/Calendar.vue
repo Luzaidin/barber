@@ -161,17 +161,10 @@
             </v-toolbar>
             <v-card-text>
               <form v-if="currentlyEditing !== selectedEvent.id">
-                {{selectedEvent.details}}
+                <v-text-field v-model="endTime" type="time" label="end hour" readonly></v-text-field>
               </form>
               <form  v-else>
-                <textarea-autosize
-                  v-model="selectedEvent.details"
-                  type="text"
-                  style="width:100%"
-                  :min-height="100"
-                  placeholder="add note"
-                >
-                </textarea-autosize>
+                <v-text-field v-model="endTime" type="time" label="end hour" readonly></v-text-field>
               </form>
               <span v-html="selectedEvent.details"></span>
             </v-card-text>
@@ -298,7 +291,7 @@ import { db } from '@/main'
           alert('Name, Star date and end date are required');
         }
       },
-      async updateEvent(ev) {
+      async updateEvent() {
         await db.collection('events').doc(this.currentlyEditing).update({
             start: this.haircut_day,
             end: this.haircut_day,
