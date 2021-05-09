@@ -161,6 +161,36 @@
             </v-toolbar>
             <v-card-text>
               <form v-if="currentlyEditing !== selectedEvent.id">
+                <v-text-field 
+                  v-model="haircut_day" 
+                  type="date" 
+                  label="Haircut Day"
+                  @change="validateHaircutDay()"
+                ></v-text-field>
+                <v-select
+                  v-model="haircut_type"
+                  :items="haircutTypes"
+                  menu-props="auto"
+                  label="Select"
+                  hide-details
+                  single-line
+                  @change="changePrice()"
+                ></v-select>
+                <v-text-field v-model="haircut_price" type="text" label="Price" readonly></v-text-field>
+                <v-select
+                  v-model="payment_type"
+                  :items="paymentTypes"
+                  menu-props="auto"
+                  label="Select"
+                  hide-details
+                  single-line
+                ></v-select>
+                <v-text-field 
+                  v-model="startTime" 
+                  type="time" 
+                  label="initial hour" 
+                  @change="validateTime()"
+                ></v-text-field>
                 <v-text-field v-model="endTime" type="time" label="end hour" readonly></v-text-field>
               </form>
               <form  v-else>
