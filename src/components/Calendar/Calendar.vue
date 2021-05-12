@@ -193,7 +193,34 @@
                 </v-text-field>
               </form>
               <form  v-else>
-                <v-text-field v-model="endTime" type="time" label="end hour" readonly></v-text-field>
+                <v-select
+                  v-model="selectedEvent.tipo_de_corte"
+                  :items="haircutTypes"
+                  menu-props="auto"
+                  hide-details
+                  single-line
+                  @change="changePrice()"
+                ></v-select>
+                <v-text-field 
+                  v-model="selectedEvent.preco" 
+                  type="text"
+                  readonly></v-text-field>
+                <v-select
+                  v-model="selectedEvent.tipo_pagamento"
+                  :items="paymentTypes"
+                  menu-props="auto"
+                  hide-details
+                  single-line
+                ></v-select>
+                <v-text-field 
+                  v-model="selectedEvent.horario_inicial" 
+                  type="time" 
+                  @change="validateTime()"
+                ></v-text-field>
+                <v-text-field 
+                  v-model="selectedEvent.horario_final" 
+                  type="time" 
+                  readonly></v-text-field>
               </form>
               <span v-html="selectedEvent.details"></span>
             </v-card-text>
