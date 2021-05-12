@@ -162,28 +162,34 @@
             <v-card-text>
               <form v-if="currentlyEditing !== selectedEvent.id">
                 <v-text-field 
-                  v-model="haircut_day"
                   readonly 
-                ></v-text-field>
-                <v-text-field
-                  v-model="haircut_type"
-                  readonly
-                ></v-text-field>
-                <v-text-field
-                 v-model="haircut_price"
-                 readonly>
+                >
+                {{selectedEvent.start}}
                 </v-text-field>
                 <v-text-field
-                  v-model="payment_type"
                   readonly
-                ></v-text-field>
-                <v-text-field 
-                  v-model="startTime" 
+                >
+                {{selectedEvent.tipo_de_corte}}
+                </v-text-field>
+                <v-text-field
+                 readonly
+                >
+                {{selectedEvent.preco}}
+                </v-text-field>
+                <v-text-field
                   readonly
-                ></v-text-field>
+                >
+                {{selectedEvent.tipo_pagamento}}
+                </v-text-field>
                 <v-text-field 
-                  v-model="endTime"  
-                  readonly>
+                  readonly
+                >
+                {{selectedEvent.horario_inicial}}
+                </v-text-field>
+                <v-text-field 
+                  readonly
+                >
+                {{selectedEvent.horario_final}}
                 </v-text-field>
               </form>
               <form  v-else>
