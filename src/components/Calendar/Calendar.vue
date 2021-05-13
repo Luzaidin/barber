@@ -349,13 +349,13 @@ import { db } from '@/main'
       },
       async updateEvent() {
         await db.collection('events').doc(this.currentlyEditing).update({
-            start: this.haircut_day,
-            end: this.haircut_day,
-            tipo_pagamento: this.payment_type,
-            tipo_de_corte: this.haircut_type,
-            horario_inicial: this.startTime,
-            horario_final: this.endTime,
-            name: this.haircut_type
+            start: this.selectedEvent.start,
+            end: this.selectedEvent.end,
+            tipo_pagamento: this.selectedEvent.tipo_pagamento,
+            tipo_de_corte: this.selectedEvent.tipo_de_corte,
+            horario_inicial: this.selectedEvent.horario_inicial,
+            horario_final: this.selectedEvent.horario_final,
+            name: this.selectedEvent.name
         });
         
         this.selectedOpen = false;
