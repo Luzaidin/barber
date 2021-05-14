@@ -161,35 +161,35 @@
             </v-toolbar>
             <v-card-text>
               <form v-if="currentlyEditing !== selectedEvent.id">
-                <v-text-field 
-                  readonly 
-                >
-                {{selectedEvent.start}}
-                </v-text-field>
                 <v-text-field
+                  type="text"
                   readonly
+                  v-model="selectedEvent.tipo_de_corte"
                 >
-                {{selectedEvent.tipo_de_corte}}
                 </v-text-field>
                 <v-text-field
+                  type="text"
                  readonly
+                 v-model="selectedEvent.preco" 
                 >
-                {{selectedEvent.preco}}
                 </v-text-field>
                 <v-text-field
+                  type="text"
                   readonly
+                  v-model="selectedEvent.tipo_pagamento"
                 >
-                {{selectedEvent.tipo_pagamento}}
                 </v-text-field>
                 <v-text-field 
+                  type="text"
                   readonly
+                  v-model="selectedEvent.horario_inicial" 
                 >
-                {{selectedEvent.horario_inicial}}
                 </v-text-field>
                 <v-text-field 
+                  type="text"
                   readonly
+                  v-model="selectedEvent.horario_final" 
                 >
-                {{selectedEvent.horario_final}}
                 </v-text-field>
               </form>
               <form  v-else>
@@ -204,7 +204,8 @@
                 <v-text-field 
                   v-model="selectedEvent.preco" 
                   type="text"
-                  readonly></v-text-field>
+                  readonly>
+                </v-text-field>
                 <v-select
                   v-model="selectedEvent.tipo_pagamento"
                   :items="paymentTypes"
@@ -220,7 +221,8 @@
                 <v-text-field 
                   v-model="selectedEvent.horario_final" 
                   type="time" 
-                  readonly></v-text-field>
+                  readonly>
+                </v-text-field>
               </form>
               <span v-html="selectedEvent.details"></span>
             </v-card-text>
