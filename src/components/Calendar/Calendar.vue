@@ -454,7 +454,7 @@ import { db } from '@/main'
           this.haircut_day = ""
           alert('Dia invalido')
         } else {
-          this.haircutDate = date;
+          this.haircutDate = this.haircut_day;
         }
       },
       validateTime() {
