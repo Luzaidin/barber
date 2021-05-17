@@ -324,7 +324,7 @@ import { db } from '@/main'
         this.events = events;
       },
       async addEvent() {
-        if(this.payment_type && this.haircut_type && this.startTime && this.endTime) {
+        if(this.payment_type && this.haircut_type && this.startTime && this.endTime && this.haircut_day) {
           await db.collection('events').add({
             start: this.haircut_day,
             end: this.haircut_day,
