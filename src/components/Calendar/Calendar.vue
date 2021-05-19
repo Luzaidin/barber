@@ -165,30 +165,35 @@
                   type="text"
                   readonly
                   v-model="selectedEvent.tipo_de_corte"
+                  prepend-inner-icon="mdi-content-cut"
                 >
                 </v-text-field>
                 <v-text-field
                   type="text"
-                 readonly
-                 v-model="selectedEvent.preco" 
+                  readonly
+                  v-model="selectedEvent.preco" 
+                  prepend-inner-icon="mdi-currency-usd"
                 >
                 </v-text-field>
                 <v-text-field
                   type="text"
                   readonly
                   v-model="selectedEvent.tipo_pagamento"
+                  prepend-inner-icon="mdi-cash"
                 >
                 </v-text-field>
                 <v-text-field 
                   type="text"
                   readonly
-                  v-model="selectedEvent.horario_inicial" 
+                  v-model="selectedEvent.horario_inicial"
+                  prepend-inner-icon="mdi-clock"
                 >
                 </v-text-field>
                 <v-text-field 
                   type="text"
                   readonly
                   v-model="selectedEvent.horario_final" 
+                  prepend-inner-icon="mdi-clock-time-eleven"
                 >
                 </v-text-field>
               </form>
