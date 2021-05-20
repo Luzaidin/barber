@@ -205,29 +205,34 @@
                   hide-details
                   single-line
                   @change="changePrice()"
+                  prepend-icon="mdi-content-cut"
                 ></v-select>
                 <v-text-field 
                   v-model="selectedEvent.preco" 
                   type="text"
-                  readonly>
-                </v-text-field>
+                  readonly
+                  prepend-inner-icon="mdi-currency-usd"
+                ></v-text-field>
                 <v-select
                   v-model="selectedEvent.tipo_pagamento"
                   :items="paymentTypes"
                   menu-props="auto"
                   hide-details
                   single-line
+                  prepend-icon="mdi-cash"
                 ></v-select>
                 <v-text-field 
                   v-model="selectedEvent.horario_inicial" 
                   type="time" 
                   @change="validateTime()"
+                  prepend-inner-icon="mdi-clock"
                 ></v-text-field>
                 <v-text-field 
                   v-model="selectedEvent.horario_final" 
                   type="time" 
-                  readonly>
-                </v-text-field>
+                  readonly
+                  prepend-inner-icon="mdi-clock-time-eleven"
+                ></v-text-field>
               </form>
               <span v-html="selectedEvent.details"></span>
             </v-card-text>
