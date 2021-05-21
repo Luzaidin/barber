@@ -100,8 +100,9 @@
                 hide-details
                 single-line
                 @change="changePrice()"
+                prepend-icon="mdi-content-cut"
               ></v-select>
-              <v-text-field v-model="haircut_price" type="text" label="Price" readonly></v-text-field>
+              <v-text-field v-model="haircut_price" type="text" label="Price" readonly prepend-inner-icon="mdi-currency-usd"></v-text-field>
               <v-select
                 v-model="payment_type"
                 :items="paymentTypes"
@@ -109,14 +110,16 @@
                 label="Select"
                 hide-details
                 single-line
+                prepend-icon="mdi-cash"
               ></v-select>
               <v-text-field 
                 v-model="startTime" 
                 type="time" 
                 label="initial hour" 
                 @change="validateTime()"
+                prepend-inner-icon="mdi-clock"
               ></v-text-field>
-              <v-text-field v-model="endTime" type="time" label="end hour" readonly></v-text-field>
+              <v-text-field v-model="endTime" type="time" label="end hour" readonly prepend-inner-icon="mdi-clock-time-eleven"></v-text-field>
               <v-btn type="submit" color="primary" class="mr-4" @click.stop="dialog = false">
                 Create Event
               </v-btn>
