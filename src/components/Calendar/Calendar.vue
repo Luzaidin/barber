@@ -91,6 +91,7 @@
                 type="date" 
                 label="Haircut Day"
                 @change="validateHaircutDay()"
+                prepend-icon="mdi-calendar"
               ></v-text-field>
               <v-select
                 v-model="haircut_type"
