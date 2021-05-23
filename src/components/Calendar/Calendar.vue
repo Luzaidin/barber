@@ -86,10 +86,10 @@
         <v-card>
           <v-container>
             <v-form @submit.prevent="addEvent">
+              <label style="text-align: center;">Data</label>
               <v-text-field 
                 v-model="haircut_day" 
                 type="date" 
-                label="Haircut Day"
                 @change="validateHaircutDay()"
                 prepend-icon="mdi-calendar"
               ></v-text-field>
