@@ -86,13 +86,14 @@
         <v-card>
           <v-container>
             <v-form @submit.prevent="addEvent">
-              <label style="text-align: center;">Data</label>
+              <label style="text-align: center;">Date</label>
               <v-text-field 
                 v-model="haircut_day" 
                 type="date" 
                 @change="validateHaircutDay()"
                 prepend-icon="mdi-calendar"
               ></v-text-field>
+              <label style="text-align: center;">Haircut Type</label>
               <v-select
                 v-model="haircut_type"
                 :items="haircutTypes"
@@ -103,7 +104,9 @@
                 @change="changePrice()"
                 prepend-icon="mdi-content-cut"
               ></v-select>
+              <label style="text-align: center;">Haircut Price</label>
               <v-text-field v-model="haircut_price" type="text" label="Price" readonly prepend-inner-icon="mdi-currency-usd"></v-text-field>
+              <label style="text-align: center;">Payment Type</label>
               <v-select
                 v-model="payment_type"
                 :items="paymentTypes"
@@ -113,6 +116,7 @@
                 single-line
                 prepend-icon="mdi-cash"
               ></v-select>
+              <label style="text-align: center;">Initital Hour</label>
               <v-text-field 
                 v-model="startTime" 
                 type="time" 
@@ -120,6 +124,7 @@
                 @change="validateTime()"
                 prepend-inner-icon="mdi-clock"
               ></v-text-field>
+              <label style="text-align: center;">End Hour</label>
               <v-text-field v-model="endTime" type="time" label="end hour" readonly prepend-inner-icon="mdi-clock-time-eleven"></v-text-field>
               <v-btn type="submit" color="primary" class="mr-4" @click.stop="dialog = false">
                 Create Event
