@@ -170,6 +170,7 @@
             </v-toolbar>
             <v-card-text>
               <form v-if="currentlyEditing !== selectedEvent.id">
+                <label style="text-align: center;">Haircut Type</label>
                 <v-text-field
                   type="text"
                   readonly
@@ -177,6 +178,7 @@
                   prepend-inner-icon="mdi-content-cut"
                 >
                 </v-text-field>
+                <label style="text-align: center;">Haircut Price</label>
                 <v-text-field
                   type="text"
                   readonly
@@ -184,6 +186,7 @@
                   prepend-inner-icon="mdi-currency-usd"
                 >
                 </v-text-field>
+                <label style="text-align: center;">Payment Type</label>
                 <v-text-field
                   type="text"
                   readonly
@@ -191,6 +194,7 @@
                   prepend-inner-icon="mdi-cash"
                 >
                 </v-text-field>
+                <label style="text-align: center;">Initital Hour</label>
                 <v-text-field 
                   type="text"
                   readonly
@@ -198,6 +202,7 @@
                   prepend-inner-icon="mdi-clock"
                 >
                 </v-text-field>
+                <label style="text-align: center;">End Hour</label>
                 <v-text-field 
                   type="text"
                   readonly
