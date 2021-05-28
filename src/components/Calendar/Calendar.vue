@@ -352,6 +352,9 @@ import { db } from '@/main'
         });
         this.events = events;
       },
+      async getBarberInformation() {
+        let barber_information = await db.collection('barber_info').get()
+      },
       async addEvent() {
         if(this.payment_type && this.haircut_type && this.startTime && this.endTime && this.haircut_day) {
           await db.collection('events').add({
