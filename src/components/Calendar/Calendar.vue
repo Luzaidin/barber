@@ -371,6 +371,9 @@ import { db } from '@/main'
         this.haircut_type_and_prices = dataHaircutType;
         this.haircutTypes = dataHaircutTypePrices;
       },
+      async getBarberPaymentTypes() {
+        let barber_payment_type = await db.collection('barber_payment_type').get()
+      },
       async addEvent() {
         if(this.payment_type && this.haircut_type && this.startTime && this.endTime && this.haircut_day) {
           await db.collection('events').add({
