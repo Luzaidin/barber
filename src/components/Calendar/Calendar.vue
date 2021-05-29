@@ -311,7 +311,7 @@ import { db } from '@/main'
       endDate: '',
       currentlyEditing: null,
       haircut_type: 'Cabelo',
-      haircutTypes: ['Cabelo', 'Barba'],
+      haircutTypes: [],
       payment_type: 'Money',
       paymentTypes: ['Money', 'Card'],
       haircut_type_and_prices: [
@@ -339,6 +339,7 @@ import { db } from '@/main'
     mounted () {
       this.getEvents()
       //this.$refs.calendar.checkChange()
+      this.getBarberInformation()
     },
     methods: { 
       async getEvents() {
@@ -354,6 +355,21 @@ import { db } from '@/main'
       },
       async getBarberInformation() {
         let barber_information = await db.collection('barber_info').get()
+
+        let dataHaircutType = [];
+        let dataHaircutTypePrices = [];
+        barber_information.forEach(doc => {
+          console.log("data", doc.data())
+          let appData = doc.data();
+          dataHaircutType.push(appData.tipo_de_corte)
+          dataHaircutTypePrices.push({
+            type: appData.tipo_de_corte,
+            price: appData.preco,
+            time: appData.tempo
+          })
+        });
+        this.haircut_type_and_prices = dataHaircutType;
+        this.haircutTypes = dataHaircutTypePrices;
       },
       async addEvent() {
         if(this.payment_type && this.haircut_type && this.startTime && this.endTime && this.haircut_day) {
