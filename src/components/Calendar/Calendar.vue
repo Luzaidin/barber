@@ -359,7 +359,6 @@ import { db } from '@/main'
         let dataHaircutType = [];
         let dataHaircutTypePrices = [];
         barber_information.forEach(doc => {
-          console.log("data", doc.data())
           let appData = doc.data();
           dataHaircutType.push(appData.tipo_de_corte)
           dataHaircutTypePrices.push({
@@ -373,6 +372,13 @@ import { db } from '@/main'
       },
       async getBarberPaymentTypes() {
         let barber_payment_type = await db.collection('barber_payment_type').get()
+
+        let dataPaymentType = [];
+        barber_payment_type.forEach(doc => {
+          let appData = doc.data();
+          dataPaymentType.push(appData.tipo_de_pagamento)
+        });
+        this.paymentTypes = dataPaymentType;
       },
       async addEvent() {
         if(this.payment_type && this.haircut_type && this.startTime && this.endTime && this.haircut_day) {
