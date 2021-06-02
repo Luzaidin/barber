@@ -340,6 +340,7 @@ import { db } from '@/main'
       this.getEvents()
       //this.$refs.calendar.checkChange()
       this.getBarberInformation()
+      this.getBarberPaymentTypes()
     },
     methods: { 
       async getEvents() {
