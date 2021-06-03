@@ -500,6 +500,18 @@ import { db } from '@/main'
           } 
         }
       },
+      validateEvent() {
+        let haircut_date = this.haircut_day.split('-')
+
+        let year = parseInt(haircut_date[0])
+        let month = parseInt(haircut_date[1])
+        let day = parseInt(haircut_date[2])
+
+        let currentDate = new Date();
+        let currentDay = currentDate.getDate()
+        let currentMonth = currentDate.getMonth() + 1
+        let currentYear = currentDate.getFullYear()
+      },
       validateHaircutDay() {
         let haircut_date = this.haircut_day.split('-')
 
