@@ -511,6 +511,16 @@ import { db } from '@/main'
         let currentDay = currentDate.getDate()
         let currentMonth = currentDate.getMonth() + 1
         let currentYear = currentDate.getFullYear()
+
+        if (year < currentYear){
+          alert('Ano não é compátivel')
+        }
+        else if (month < currentMonth){
+          alert('Mes não é compátivel')
+        }
+        else if (day < currentDay){
+          alert('Dia não é compátivel')
+        }
       },
       validateHaircutDay() {
         let haircut_date = this.haircut_day.split('-')
