@@ -521,6 +521,14 @@ import { db } from '@/main'
         else if (day < currentDay){
           alert('Dia não é compátivel')
         }
+
+        let initial_time =  parseInt(this.horario_inicial.replace(':', ""))
+        let end_time = parseInt(this.horario_final.replace(':', ""))
+        this.events.forEach(event => {
+          if (event.end == this.haircut_day){
+            //TODO 
+          }
+        });
       },
       validateHaircutDay() {
         let haircut_date = this.haircut_day.split('-')
