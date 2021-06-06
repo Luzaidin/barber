@@ -526,7 +526,11 @@ import { db } from '@/main'
         let end_time = parseInt(this.horario_final.replace(':', ""))
         this.events.forEach(event => {
           if (event.end == this.haircut_day){
-            //TODO 
+            let event_initial_time = parseInt(event.horario_inicial.replace(':', ""))
+            let event_end_time = parseInt(event.horario_final.replace(':', ""))
+            if ((initial_time >= event_initial_time && initial_time <= event_end_time) || (end_time >= event_initial_time && end_time <= event_end_time)){
+              alert('Horario ja cadastrado')
+            }
           }
         });
       },
