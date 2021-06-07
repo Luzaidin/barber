@@ -5,12 +5,14 @@
         <v-row>
             <v-col
             cols="6"
+            class="d-none d-sm-flex"
             >
                 <p> Image </p>
             </v-col>
 
             <v-col
-            cols="6"
+            cols="12"
+            sm="6"
             >
                 <LoginForm/>
             </v-col>
