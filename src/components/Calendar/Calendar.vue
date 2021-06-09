@@ -145,7 +145,6 @@
           @click:event="showEvent"
           @click:more="viewDay"
           @click:date="viewDay"
-          @change="updateRange"
         ></v-calendar>
         <v-menu
           v-model="selectedOpen"
