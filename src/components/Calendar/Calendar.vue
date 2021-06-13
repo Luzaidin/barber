@@ -85,7 +85,7 @@
       <v-dialog v-model="dialog" max-width="500">
         <v-card>
           <v-container>
-            <v-form @submit.prevent="addEvent">
+            <v-form @submit.prevent="validateEvent">
               <label style="text-align: center;">Date</label>
               <v-text-field 
                 v-model="haircut_day" 
