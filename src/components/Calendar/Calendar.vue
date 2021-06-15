@@ -287,9 +287,13 @@
 
 <script>
 import { db } from '@/main'
+import SuccessAlert from '../Alerts/SuccessAlert.vue'
 
   export default {
     name: 'Calendar',
+    components: {
+      SuccessAlert
+    },
     data: () => ({
       focus: new Date(),
       type: 'month',
