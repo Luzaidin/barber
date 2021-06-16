@@ -287,13 +287,10 @@
 
 <script>
 import { db } from '@/main'
-import SuccessAlert from '../Alerts/SuccessAlert.vue'
+//import SuccessAlert from '../Alerts/SuccessAlert.vue'
 
   export default {
     name: 'Calendar',
-    components: {
-      SuccessAlert
-    },
     data: () => ({
       focus: new Date(),
       type: 'month',
@@ -472,6 +469,8 @@ import SuccessAlert from '../Alerts/SuccessAlert.vue'
         return Math.floor((b - a + 1) * Math.random()) + a
       },
       updateRange({ start, end }) {
+        console.log(start)
+        console.log(end)
         // const events = []
 
         // const min = new Date(`${start.date}T00:00:00`)
