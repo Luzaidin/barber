@@ -1,12 +1,12 @@
 <template>
-
-
-<div class="signupSection">
-  <div class="info">
+  <div class="signUpDiv">
+    <div class="signupSection">
+      <div class="info">
+      </div>
+      <form class="signupForm" name="signupform">
+      </form>
+    </div>
   </div>
-  <form class="signupForm" name="signupform">
-  </form>
-</div>
 
 
     <!-- <v-container 6
@@ -67,12 +67,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: #111;
-  background-repeat: no-repeat;
+.signUpDiv {
+  height: 100%;
+  width: 100%;
+  background: url('../../assets/Login/barber_home.jpg');
 }
 
 .signupSection {
@@ -91,7 +89,6 @@ body {
 }
 
 .info {
-  width: 45%;
   background: rgba(20, 20, 20, .8);
   padding: 30px 0;
   border-right: 5px solid rgba(30, 30, 30, .8);
