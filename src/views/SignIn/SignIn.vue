@@ -71,6 +71,7 @@
   height: 100%;
   width: 100%;
   background: url('../../assets/Login/barber_home.jpg');
+  background-repeat: round;
 }
 
 .signupSection {
