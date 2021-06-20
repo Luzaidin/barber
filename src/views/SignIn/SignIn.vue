@@ -3,44 +3,25 @@
     <div class="signupSection">
       <div class="info">
       </div>
-      <form class="signupForm" name="signupform">
-      </form>
+      <div class="signupForm" name="signupform">
+        <Form 
+          :SubmitFormBtnName=SubmitFormBtnName 
+          @validateForm="validateForm($event)"
+        />
+      </div>
     </div>
   </div>
-
-
-    <!-- <v-container 6
-    fill-height>   
-        <v-card
-        class="mx-auto my-12"
-        max-width="600"
-        >
-            <v-card-title 
-            class="justify-center"
-            >
-            Sign Up
-            </v-card-title>
-
-            <v-card-text>
-                <Form 
-                :SubmitFormBtnName=SubmitFormBtnName 
-                @validateForm="validateForm($event)"
-                />
-            </v-card-text>
-
-            <SnackBar
-            v-model="SnackBar.value"
-            />
-        </v-card>
-    </v-container> -->
 </template>
 
 <script>
-// import Form from '../../components/Form/Form'
+import Form from '../../components/Form/Form'
 // import SnackBar from '../../components/SnackBar/SnackBar'
 
     export default {
         name: 'SignIn',
+        components: {
+          Form
+        },
         data() {
             return {
                 SubmitFormBtnName: 'Register',
