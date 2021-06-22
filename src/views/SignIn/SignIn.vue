@@ -68,7 +68,7 @@ import Form from '../../components/Form/Form'
 .signupForm {
   width: 100%;
   padding: 30px 0;
-  background: rgba(20, 40, 40, .8);
+  background: #f4f7f7c7;
   transition: .2s;
 }
 
