@@ -1,13 +1,10 @@
 <template>
-    <v-container 
-    fill-height
-    >    
+    <div>
         <v-row>
             <v-col
             cols="6"
-            class="d-none d-sm-flex"
+            class="d-none d-sm-flex imgHome"
             >
-                <p> Image </p>
             </v-col>
 
             <v-col
@@ -17,7 +14,7 @@
                 <LoginForm/>
             </v-col>
         </v-row>
-    </v-container>
+    </div>
 </template>
 
 <script>
@@ -32,5 +29,13 @@
 </script>
 
 <style lang="scss" scoped>
+html, body {
+  height: 100%;
+}
 
+.imgHome {
+    background: url('../../assets/Login/barber_home.jpg') no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
 </style>
