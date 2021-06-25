@@ -29,8 +29,8 @@ import Form from '../../components/Form/Form'
             }
         },
         methods: {
-            validateForm(formIsValid) {
-                if (formIsValid) {
+            validateForm(information) {
+                if (information.inputsIsValid) {
                     this.$router.push({ name: "Home" });
                 } else{
                     this.SnackBar.value = true;
