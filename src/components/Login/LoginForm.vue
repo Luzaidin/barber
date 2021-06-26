@@ -71,9 +71,9 @@ import ButtonCenter from '../Button/ButtonCenter'
             signIn() {
                 this.$router.push({name: "SignIn"});
             },
-            validateForm(formIsValid) {
+            validateForm(information) {
                 // this.loading = true;
-                if (formIsValid) {
+                if (information.inputsIsValid) {
                     this.$router.push({ name: "Home" });
                     // this.loading = false;
                 } else {
