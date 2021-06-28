@@ -14,6 +14,7 @@
 <script>
 import Form from '../../components/Form/Form'
 // import SnackBar from '../../components/SnackBar/SnackBar'
+import firebase from firebase
 
     export default {
         name: 'SignIn',
@@ -31,10 +32,21 @@ import Form from '../../components/Form/Form'
         methods: {
             validateForm(information) {
                 if (information.inputsIsValid) {
-                    this.$router.push({ name: "Home" });
+                    this.userRegistration(information)
                 } else{
                     this.SnackBar.value = true;
                 }
+            },
+            userRegistration(user) {
+              firebase
+              .auth()
+              .createUserWithEmailAndPassword(user.email, user.password)
+              .then((res) => {
+                this.$router.push({ name: "Home" });
+              })
+              .catch((error) => {
+                alert(error.message);
+              });
             }
         },
     }
