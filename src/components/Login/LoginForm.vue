@@ -46,6 +46,7 @@
 import Form from '../Form/Form'
 import SnackBar from '../SnackBar/SnackBar'
 import ButtonCenter from '../Button/ButtonCenter'
+import firebase from 'firebase'
 
     export default {
         name: 'LoginForm',
@@ -74,11 +75,23 @@ import ButtonCenter from '../Button/ButtonCenter'
             validateForm(information) {
                 // this.loading = true;
                 if (information.inputsIsValid) {
-                    this.$router.push({ name: "Home" });
+                    this.login(information);
+                    // this.$router.push({ name: "Home" });
                     // this.loading = false;
                 } else {
                     this.SnackBar.value = true;
                 }
+            },
+            login(user) {
+                firebase
+                .auth()
+                .signInWithEmailAndPassword(user.email, user.password)
+                .then(() => {
+                    this.$router.push({ name: "Home" });
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
             },
             sendPassword(){
                 alert('Um novo email foi enviado');
