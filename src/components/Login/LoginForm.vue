@@ -94,7 +94,17 @@ import firebase from 'firebase'
                 });
             },
             sendPassword(){
-                alert('Um novo email foi enviado');
+                firebase
+                .auth()
+                .sendPasswordResetEmail(this.user.email)
+                .then(() => {
+                    alert('Check your registered email to reset the password!')
+                    this.user = {   
+                    email: ''
+                    }
+                }).catch((error) => {
+                    alert(error)
+                })
             }
         },
     }
