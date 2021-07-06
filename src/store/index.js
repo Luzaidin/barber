@@ -10,7 +10,11 @@ export default new Vuex.Store({
       password: ''
     }
   },
-  mutations: {},
+  mutations: {
+    setUser(state, payload) {
+      state.user = payload;
+    }
+  },
   actions: {},
   modules: {},
   getters: {}
