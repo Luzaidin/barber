@@ -72,12 +72,14 @@ import ButtonCenter from '../Button/ButtonCenter'
         methods: {
             validateInputs() {
                 let inputsIsValid = this.$refs.form.validate()
-                let information = {
-                    inputsIsValid: inputsIsValid,
-                    email: this.email,
-                    password: this.password
+                if (inputsIsValid) {
+                    let user = {
+                        email: this.email,
+                        password: this.password
+                    };
+                    this.$store.commit('setUser', user);
                 }
-                this.$emit('validateForm', information);
+                this.$emit('validateForm', inputsIsValid);
             }
         }
     }
