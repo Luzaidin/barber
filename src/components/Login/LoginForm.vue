@@ -72,12 +72,9 @@ import firebase from 'firebase'
             signIn() {
                 this.$router.push({name: "SignIn"});
             },
-            validateForm(information) {
-                // this.loading = true;
-                if (information.inputsIsValid) {
+            validateForm(inputsIsValid) {
+                if (inputsIsValid) {
                     this.login(information);
-                    // this.$router.push({ name: "Home" });
-                    // this.loading = false;
                 } else {
                     this.SnackBar.value = true;
                 }
