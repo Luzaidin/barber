@@ -30,8 +30,8 @@ import firebase from firebase
             }
         },
         methods: {
-            validateForm(information) {
-                if (information.inputsIsValid) {
+            validateForm(inputsIsValid) {
+                if (inputsIsValid) {
                     this.userRegistration(information)
                 } else{
                     this.SnackBar.value = true;
