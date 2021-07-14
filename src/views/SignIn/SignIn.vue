@@ -14,7 +14,7 @@
 <script>
 import Form from '../../components/Form/Form'
 // import SnackBar from '../../components/SnackBar/SnackBar'
-import firebase from firebase
+import { registerUserDB } from '../../firebase/index'
 
     export default {
         name: 'SignIn',
@@ -32,10 +32,19 @@ import firebase from firebase
         methods: {
             validateForm(inputsIsValid) {
                 if (inputsIsValid) {
-                    this.userRegistration(information)
+                    this.registerUser()
+                    //this.userRegistration(information)
                 } else{
                     this.SnackBar.value = true;
                 }
+            },
+            registerUser() {
+              let registeredUser = registerUserDB(user)
+              if (registeredUser) {
+                this.$router.push({ name: "Home" });
+              } else {
+                this.SnackBar.value = true;
+              }
             },
             userRegistration(user) {
               firebase
