@@ -26,8 +26,15 @@ import { registerUserDB } from '../../firebase/index'
                 SubmitFormBtnName: 'Register',
                 SnackBar: {
                     value: false
+                },
+                user: {
+                  email: '',
+                  password: '',
                 }
             }
+        },
+        mounted () {
+          this.user = this.$store.getters.getUser;
         },
         methods: {
             validateForm(inputsIsValid) {
@@ -39,7 +46,7 @@ import { registerUserDB } from '../../firebase/index'
                 }
             },
             registerUser() {
-              let registeredUser = registerUserDB(user)
+              let registeredUser = registerUserDB(this.user)
               if (registeredUser) {
                 this.$router.push({ name: "Home" });
               } else {
