@@ -14,7 +14,7 @@ function registerUserDB(user) {
   });
 };
 
-function createUserDB(user) {
+function authenticUserDB(user) {
   firebase
   .auth()
   .signInWithEmailAndPassword(user.email, user.password)
@@ -28,4 +28,4 @@ function createUserDB(user) {
   });
 };
 
-export {registerUserDB, createUserDB}
+export {registerUserDB, authenticUserDB}
