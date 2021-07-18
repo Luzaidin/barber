@@ -47,6 +47,7 @@ import Form from '../Form/Form'
 import SnackBar from '../SnackBar/SnackBar'
 import ButtonCenter from '../Button/ButtonCenter'
 import firebase from 'firebase'
+import { authenticUserDB } from '../../firebase/index'
 
     export default {
         name: 'LoginForm',
