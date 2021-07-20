@@ -66,8 +66,15 @@ import { authenticUserDB } from '../../firebase/index'
                 ButtonMensage: {
                     forgotPassword: 'Forgot password?',
                     signIn: 'Sign In'
+                },
+                user: {
+                  email: '',
+                  password: '',
                 }
             }
+        },
+        mounted () {
+          this.user = this.$store.getters.getUser;
         },
         methods: {
             signIn() {
