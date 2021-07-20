@@ -82,21 +82,18 @@ import { authenticUserDB } from '../../firebase/index'
             },
             validateForm(inputsIsValid) {
                 if (inputsIsValid) {
-                    this.login(information);
+                    this.login();
                 } else {
                     this.SnackBar.value = true;
                 }
             },
-            login(user) {
-                firebase
-                .auth()
-                .signInWithEmailAndPassword(user.email, user.password)
-                .then(() => {
+            login() {
+                let authenticatedUser  = authenticUserDB(this.user)
+                if (authenticatedUser) {
                     this.$router.push({ name: "Home" });
-                })
-                .catch((error) => {
-                    alert(error.message);
-                });
+                } else {
+                    //this.SnackBar.value = true;
+                }
             },
             sendPassword(){
                 firebase
