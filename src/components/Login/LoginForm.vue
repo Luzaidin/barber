@@ -47,7 +47,7 @@ import Form from '../Form/Form'
 import SnackBar from '../SnackBar/SnackBar'
 import ButtonCenter from '../Button/ButtonCenter'
 import firebase from 'firebase'
-import { authenticUserDB } from '../../firebase/index'
+import { authenticUserDB, resetPasswordDB } from '../../firebase/index'
 
     export default {
         name: 'LoginForm',
@@ -96,17 +96,23 @@ import { authenticUserDB } from '../../firebase/index'
                 }
             },
             sendPassword(){
-                firebase
-                .auth()
-                .sendPasswordResetEmail(this.user.email)
-                .then(() => {
-                    alert('Check your registered email to reset the password!')
-                    this.user = {   
-                    email: ''
-                    }
-                }).catch((error) => {
-                    alert(error)
-                })
+                let emailSent = resetPasswordDB(this.user)
+                if (emailSent) {
+                    alert('E-mail enviado.')
+                } else {
+                    alert('Erro! Ao enviar e-mail.')
+                }
+                // firebase
+                // .auth()
+                // .sendPasswordResetEmail(this.user.email)
+                // .then(() => {
+                //     alert('Check your registered email to reset the password!')
+                //     this.user = {   
+                //     email: ''
+                //     }
+                // }).catch((error) => {
+                //     alert(error)
+                // })
             }
         },
     }
