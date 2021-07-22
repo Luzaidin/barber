@@ -28,4 +28,21 @@ function authenticUserDB(user) {
   });
 };
 
-export {registerUserDB, authenticUserDB}
+function resetPasswordDB(user) {
+  firebase
+  .auth()
+  .sendPasswordResetEmail(this.user.email)
+  .then(() => {
+    return true
+      //alert('Check your registered email to reset the password!')
+      //this.user = {   
+      //email: ''
+      //}
+  })
+  .catch((error) => {
+    return false
+      //alert(error)
+  })
+}
+
+export {registerUserDB, authenticUserDB, resetPasswordDB}
