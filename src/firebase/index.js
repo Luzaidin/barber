@@ -1,18 +1,18 @@
-import firebase from firebase
+import firebase from "firebase"
 
 function registerUserDB(user) {
   firebase
   .auth()
   .createUserWithEmailAndPassword(user.email, user.password)
-  .then((res) => {
+  .then(() => {
     return true
     //this.$router.push({ name: "Home" });
   })
-  .catch((error) => {
+  .catch(() => {
     return false
     //alert(error.message);
   });
-};
+}
 
 function authenticUserDB(user) {
   firebase
@@ -22,16 +22,16 @@ function authenticUserDB(user) {
     return true
     //this.$router.push({ name: "Home" });
   })
-  .catch((error) => {
+  .catch(() => {
     return false
     //alert(error.message);
   });
-};
+}
 
 function resetPasswordDB(user) {
   firebase
   .auth()
-  .sendPasswordResetEmail(this.user.email)
+  .sendPasswordResetEmail(user.email)
   .then(() => {
     return true
       //alert('Check your registered email to reset the password!')
@@ -39,7 +39,7 @@ function resetPasswordDB(user) {
       //email: ''
       //}
   })
-  .catch((error) => {
+  .catch(() => {
     return false
       //alert(error)
   })
