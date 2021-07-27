@@ -40,7 +40,6 @@ import { registerUserDB } from '../../firebase/index'
             validateForm(inputsIsValid) {
                 if (inputsIsValid) {
                     this.registerUser()
-                    //this.userRegistration(information)
                 } else{
                     this.SnackBar.value = true;
                 }
@@ -53,17 +52,6 @@ import { registerUserDB } from '../../firebase/index'
                 this.SnackBar.value = true;
               }
             },
-            userRegistration(user) {
-              firebase
-              .auth()
-              .createUserWithEmailAndPassword(user.email, user.password)
-              .then((res) => {
-                this.$router.push({ name: "Home" });
-              })
-              .catch((error) => {
-                alert(error.message);
-              });
-            }
         },
     }
 </script>
