@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
-import vuetify from './plugins/vuetify';
+import vuetify from './plugins/vuetify'
 import router from './router'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import Vuex from 'vuex'
+import store from "./store"
 
 Vue.config.productionTip = false
+Vue.use(Vuex)
 
 firebase.initializeApp({
   apiKey: process.env.FIREBASE_API_KEY,
@@ -20,6 +23,7 @@ firebase.initializeApp({
 export const db = firebase.firestore();
 
 new Vue({
+  store,
   vuetify,
   router,
   render: h => h(App)
