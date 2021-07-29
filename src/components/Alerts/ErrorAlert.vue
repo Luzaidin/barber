@@ -1,5 +1,6 @@
 <template>
     <v-alert
+    v-model="alertValue"
     type="error">
       {{text}}
     </v-alert>
@@ -13,7 +14,17 @@
                 type: String,
                 default: 'Error'
             },
-        }
+        },
+        computed: {
+            alertValue: {
+                get() {
+                    return this.value 
+                },
+                set(newValue) {
+                    this.$emit('input', newValue);
+                }
+            }
+        },
 
     }
 </script>
