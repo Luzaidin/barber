@@ -10,6 +10,10 @@
     export default {
         name: "ErrorAlert",
         props:{
+            value: {
+                type: Boolean,
+                defaul: false
+            },
             text: {
                 type: String,
                 default: 'Error'
