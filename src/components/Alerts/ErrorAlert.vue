@@ -1,7 +1,9 @@
 <template>
     <v-alert
     v-model="alertValue"
-    type="error">
+    type="error"
+    :dismissible="dismissible"
+    >
       {{text}}
     </v-alert>
 </template>
@@ -12,11 +14,15 @@
         props:{
             value: {
                 type: Boolean,
-                defaul: false
+                default: false
             },
             text: {
                 type: String,
                 default: 'Error'
+            },
+            dismissible: {
+                type: Boolean,
+                default: true
             },
         },
         computed: {
