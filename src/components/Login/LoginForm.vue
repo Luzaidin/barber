@@ -117,17 +117,6 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
                 } else {
                     alert('Erro! Ao enviar e-mail.')
                 }
-                // firebase
-                // .auth()
-                // .sendPasswordResetEmail(this.user.email)
-                // .then(() => {
-                //     alert('Check your registered email to reset the password!')
-                //     this.user = {   
-                //     email: ''
-                //     }
-                // }).catch((error) => {
-                //     alert(error)
-                // })
             }
         },
     }
