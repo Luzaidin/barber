@@ -54,7 +54,7 @@
 import Form from '../Form/Form'
 import SnackBar from '../SnackBar/SnackBar'
 import ButtonCenter from '../Button/ButtonCenter'
-import { resetPasswordDB } from '../../firebase/index'
+import { authenticUserDB, resetPasswordDB } from '../../firebase/index'
 import ErrorAlert from '../Alerts/ErrorAlert.vue'
 
     export default {
