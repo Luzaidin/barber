@@ -44,7 +44,7 @@
         <div style="position: absolute;bottom: 0;">
             <ErrorAlert
             v-model="ErrorAlert.value"
-            :text="AlertMensage.errorMensage"
+            :text="AlertMensage.loginErrorMensage"
             />
         </div>
     </div>
@@ -84,7 +84,7 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
                   password: '',
                 },
                 AlertMensage: {
-                    errorMensage: "Error! Failed to login."
+                    loginErrorMensage: "Error! Failed to login."
                 }
             }
         },
