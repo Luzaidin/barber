@@ -84,7 +84,8 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
                   password: '',
                 },
                 AlertMensage: {
-                    loginErrorMensage: "Error! Failed to login."
+                    loginErrorMensage: "Error! Failed to login.",
+                    resetPasswordErrorMensage: "Erro! Failed to send e-mail."
                 }
             }
         },
