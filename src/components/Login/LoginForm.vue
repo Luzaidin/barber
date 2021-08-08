@@ -43,7 +43,7 @@
         </v-card>
         <div style="position: absolute;bottom: 0;">
             <ErrorAlert
-            v-model="ErrorAlert.value"
+            v-model="ResertPasswordErrorAlert.value"
             :text="AlertMensage.loginErrorMensage"
             />
         </div>
@@ -72,7 +72,7 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
                 SnackBar: {
                     value: false
                 },
-                ErrorAlert: {
+                ResertPasswordErrorAlert: {
                     value: false
                 },
                 ButtonMensage: {
@@ -109,7 +109,7 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
                 if (authenticatedUser) {
                     this.$router.push({ name: "Home" });
                 } else {
-                    this.ErrorAlert.value = true;
+                    this.ResertPasswordErrorAlert.value = true;
                 }
             },
             sendPassword(){
