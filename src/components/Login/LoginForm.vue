@@ -43,8 +43,8 @@
         </v-card>
         <div style="position: absolute;bottom: 0;">
             <ErrorAlert
-            v-model="ResertPasswordErrorAlert.value"
-            :text="AlertMensage.loginErrorMensage"
+            v-model="ErrorAlert.value"
+            :text="ErrorAlert.mensage.default"
             />
         </div>
     </div>
@@ -72,8 +72,13 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
                 SnackBar: {
                     value: false
                 },
-                ResertPasswordErrorAlert: {
-                    value: false
+                ErrorAlert: {
+                    value: false,
+                    mensage: {
+                        default: '',
+                        login: "Error! Failed to login.",
+                        resetPassword: "Erro! Failed to send e-mail.",
+                    }
                 },
                 ButtonMensage: {
                     forgotPassword: 'Forgot password?',
@@ -84,8 +89,6 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
                   password: '',
                 },
                 AlertMensage: {
-                    loginErrorMensage: "Error! Failed to login.",
-                    resetPasswordErrorMensage: "Erro! Failed to send e-mail.",
                     resetPasswordSuccessMensage: "Success! An email has been sent."
                 }
             }
@@ -109,7 +112,8 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
                 if (authenticatedUser) {
                     this.$router.push({ name: "Home" });
                 } else {
-                    this.ResertPasswordErrorAlert.value = true;
+                    this.ErrorAlert.mensage.default = this.ErrorAlert.mensage.login;
+                    this.ErrorAlert.value = true;
                 }
             },
             sendPassword(){
