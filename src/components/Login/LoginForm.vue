@@ -121,7 +121,9 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
                 if (emailSent) {
                     alert('E-mail enviado.')
                 } else {
-                    alert('Erro! Ao enviar e-mail.')
+                    this.ErrorAlert.mensage.default = this.ErrorAlert.mensage.resetPassword;
+                    this.ErrorAlert.value = true;
+                    //alert('Erro! Ao enviar e-mail.')
                 }
             }
         },
