@@ -88,8 +88,12 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
                   email: '',
                   password: '',
                 },
-                AlertMensage: {
-                    resetPasswordSuccessMensage: "Success! An email has been sent."
+                SuccessAlert: {
+                    value: false,
+                    mensage: {
+                        default: '',
+                        resetPassword: "Success! An email has been sent.",
+                    }
                 }
             }
         },
