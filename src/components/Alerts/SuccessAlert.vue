@@ -9,11 +9,19 @@
     export default {
         name: "SuccessAlert",
         props:{
+            value: {
+                type: Boolean,
+                default: false
+            },
             text: {
                 type: String,
-                default: 'Success'
+                default: 'Success!'
             },
-        }
+            dismissible: {
+                type: Boolean,
+                default: true
+            },
+        },
 
     }
 </script>
