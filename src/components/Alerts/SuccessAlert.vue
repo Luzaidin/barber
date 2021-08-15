@@ -1,6 +1,8 @@
 <template>
     <v-alert
-    type="success">
+    type="success"
+    :dismissible="dismissible"
+    >
       {{text}}
     </v-alert>
 </template>
