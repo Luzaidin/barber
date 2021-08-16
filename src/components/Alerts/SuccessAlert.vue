@@ -1,5 +1,6 @@
 <template>
     <v-alert
+    v-model="alertValue"
     type="success"
     :dismissible="dismissible"
     >
@@ -23,6 +24,16 @@
                 type: Boolean,
                 default: true
             },
+        },
+        computed: {
+            alertValue: {
+                get() {
+                    return this.value 
+                },
+                set(newValue) {
+                    this.$emit('input', newValue);
+                }
+            }
         },
 
     }
