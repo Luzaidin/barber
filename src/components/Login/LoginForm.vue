@@ -56,6 +56,7 @@ import SnackBar from '../SnackBar/SnackBar'
 import ButtonCenter from '../Button/ButtonCenter'
 import { authenticUserDB, resetPasswordDB } from '../../firebase/index'
 import ErrorAlert from '../Alerts/ErrorAlert.vue'
+import SuccessAlert from '../Alerts/SuccessAlert.vue'
 
     export default {
         name: 'LoginForm',
@@ -63,7 +64,8 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
             Form,
             SnackBar,
             ButtonCenter,
-            ErrorAlert
+            ErrorAlert,
+            SuccessAlert
         },
         data() {
             return  {
