@@ -47,6 +47,12 @@
             :text="ErrorAlert.mensage.default"
             />
         </div>
+        <div style="position: absolute;bottom: 0;">
+            <SuccessAlert
+            v-model="SuccessAlert.value"
+            :text="SuccessAlert.mensage.default"
+            />
+        </div>
     </div>
 </template>
 
