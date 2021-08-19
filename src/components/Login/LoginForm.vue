@@ -131,7 +131,9 @@ import SuccessAlert from '../Alerts/SuccessAlert.vue'
             sendPassword(){
                 let emailSent = resetPasswordDB(this.user)
                 if (emailSent) {
-                    alert('E-mail enviado.')
+                    this.SuccessAlert.mensage.default = this.SuccessAlert.mensage.resetPassword;
+                    this.SuccessAlert.value = true;
+                    //alert('E-mail enviado.')
                 } else {
                     this.ErrorAlert.mensage.default = this.ErrorAlert.mensage.resetPassword;
                     this.ErrorAlert.value = true;
