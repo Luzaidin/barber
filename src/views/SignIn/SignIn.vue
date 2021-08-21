@@ -15,11 +15,13 @@
 import Form from '../../components/Form/Form'
 // import SnackBar from '../../components/SnackBar/SnackBar'
 import { registerUserDB } from '../../firebase/index'
+import ErrorAlert from '../Alerts/ErrorAlert.vue'
 
     export default {
         name: 'SignIn',
         components: {
-          Form
+          Form,
+          ErrorAlert
         },
         data() {
             return {
