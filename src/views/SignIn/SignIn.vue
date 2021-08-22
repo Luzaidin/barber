@@ -32,7 +32,14 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
                 user: {
                   email: '',
                   password: '',
-                }
+                },
+                ErrorAlert: {
+                    value: false,
+                    mensage: {
+                        default: '',
+                        registerError: "Error! Failed to register user.",
+                    }
+                },
             }
         },
         mounted () {
