@@ -58,7 +58,8 @@ import ErrorAlert from '../Alerts/ErrorAlert.vue'
               if (registeredUser) {
                 this.$router.push({ name: "Home" });
               } else {
-                this.SnackBar.value = true;
+                this.ErrorAlert.value = true;
+                this.ErrorAlert.mensage.default = this.ErrorAlert.mensage.registerError;
               }
             },
         },
